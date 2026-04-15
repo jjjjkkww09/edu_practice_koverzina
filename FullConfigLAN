@@ -1,110 +1,203 @@
 #### Часть 1.
 
 Шаг 1. Согласно заданной схеме, строим топологию сети, по которой будет выполняться задание.
-![](/kartinko/Pasted_image_20260413171709.png|697)
+
+![](/kartinko/Image_0005.png)
+
 Шаг 2. На каждом роутере создаем сообщение дня (MOTD) с указанием своего ФИО, номером группы и порядковым номером в журнале.
 Первый роутер (в Новосибирске):
-![](/kartinko/Pasted_image_20260413171435.png)
+
+![](/kartinko/Image_0002.png)
+
 Второй роутер (первый в Москве): 
-![](/kartinko/Pasted_image_20260413171652.png)
+
+![](/kartinko/Image_0003.png)
+
 Третий роутер (второй в Москве):
-![](/kartinko/Pasted_image_20260413171631.png)
+
+![](/kartinko/Image_0004.png)
+
 Шаг 3. Переименовываем устройства по шаблону "сокращенное название страны-сокращенное название города-сокращенная роль устройства-порядковый номер устройства"
 Сначала переименуем устройства, находящиеся в Новосибирске.
 Маршрутизатор:
-![](/kartinko/Pasted_image_20260413171951.png|294)
+
+![](/kartinko/Image_0006.png)
+
 Коммутаторы:
-![](/kartinko/Pasted_image_20260413172150.png)
-![](/kartinko/Pasted_image_20260413172312.png)
+
+![](/kartinko/Image_0007.png)
+
+![](/kartinko/Image_0008.png)
+
 Компьютеры, подключенные к первому коммутатору:
-![](/kartinko/Pasted_image_20260413172425.png)
-![](/kartinko/Pasted_image_20260413172439.png)
-![](/kartinko/Pasted_image_20260413172504.png)
+
+![](/kartinko/Image_0009.png)
+
+![](/kartinko/Image_00010.png)
+
+![](/kartinko/Image_00011.png)
+
 Компьютеры, подключенные ко второму коммутатору:
-![](/kartinko/Pasted_image_20260413172547.png)
-![](/kartinko/Pasted_image_20260413172607.png)![]/kartinko/(Pasted_image_20260413172626.png)
+
+![](/kartinko/Image_00012.png)
+
+![](/kartinko/Image_00013.png)
+
+![]/kartinko/(Image_00014.png)
+
 Переименуем устройства в Москве.
 Маршрутизаторы:
-![](/kartinko/Pasted_image_20260413172827.png)![]/kartinko/(Pasted_image_20260413172848.png)
+
+![](/kartinko/Image_00015.png)
+
+![]/kartinko/(Image_00016.png)
+
 Коммутаторы:
-![](/kartinko/Pasted_image_20260413172950.png)
-![](/kartinko/Pasted_image_20260413173217.png)
+
+![](/kartinko/Image_00017.png)
+
+![](/kartinko/Image_00018.png)
+
 Сервер:
-![](/kartinko/Pasted_image_20260413173314.png)
+
+![](/kartinko/Image_00019.png)
+
 Компьютеры, подключенные к rus-msk-s2 (MLS):
-![](/kartinko/Pasted_image_20260413173436.png)
-![](/kartinko/Pasted_image_20260413173451.png)
+
+![](/kartinko/Image_00020.png)
+
+![](/kartinko/Image_00021.png)
+
 Теперь топология сети с измененными названиями устройств выглядит так:
-![](/kartinko/Pasted_image_20260413173552.png)
+
+![](/kartinko/Image_00022.png)
+
 Шаг 4. Раздаем доменные имена согласно местоположению.
 Устройства в Новосибирске:
-![](/kartinko/Pasted_image_20260413174104.png)
-![](/kartinko/Pasted_image_20260413174153.png)![]/kartinko/(Pasted_image_20260413174159.png)
+
+![](/kartinko/Image_00023.png)
+
+![](/kartinko/Image_00024.png)
+
+![]/kartinko/(Image_00025.png)
+
 Устройства в Москве:
-![](/kartinko/Pasted_image_20260413174412.png|345)![]/kartinko/(Pasted_image_20260413174425.png)
-![](/kartinko/Pasted_image_20260413174443.png)![]/kartinko/(Pasted_image_20260413174500.png)
+
+![](/kartinko/Image_00026.png)
+
+![]/kartinko/Image_00027.png)
+
+![](/kartinko/Image_00028.png)
+
+![]/kartinko/Image_00029.png)
+
 Шаг 5. На коммутаторах в Новосибирске создадим VLAN 2,3 и 4 без присвоения им имен.
-![](/kartinko/Pasted_image_20260413180554.png)
-![](/kartinko/Pasted_image_20260413180625.png)
+
+![](/kartinko/Image_00030.png)
+
+![](/kartinko/Image_00031.png)
+
 Шаг 6. На коммутаторах в Новосибирске назначаем интерфейс f0/2 VLAN 2, интерфейс f0/3 VLAN 3, интерфейс f0/4 VLAN 4.
-![](/kartinko/Pasted_image_20260413183106.png)
-![](/kartinko/(Pasted_image_20260413183312.png)
+![](/kartinko/Image_00032.png)
+
+![](/kartinko/(Image_00033.png)
+
 Шаг 7. Создаем канал EtherChannel 2-го уровня между коммутаторами в Новосибирске, используя интерфейсы G0/1 и G0/2. Обязательно выполняем требования:
 1. Используем стандартный протокол для создания логической связи под номером 1.
 2. Коммутатор rus-nsk-s1 является ответственным за инициирование согласования канала EtherChannel.
 3. Изменим интерфейс агрегированного канала на транковый на обоих коммутаторах.
 Настраиваем коммутатор rus-nsk-s1:
-![](/kartinko/Pasted_image_20260415142943.png)
+
+![](/kartinko/Image_00034.png)
+
 Настраиваем коммутатор rus-nsk-s2:
-![](/kartinko/Pasted_image_20260415143203.png)
+![](/kartinko/Image_00035.png)
+
 Шаг 8. Создаем Management interface на коммутаторе rus-nsk-s1 для VLAN 1, используя IP-адрес 1.0.0.50/8 и шлюз по умолчанию 1.0.0.1.
-![](/kartinko/Pasted_image_20260415143759.png)
+
+![](/kartinko/Image_00036.png)
+
 Шаг 9. Создаем Management interface на коммутаторе rus-nsk-s2 для VLAN 2, используя IP-адрес 2.0.0.50/8 и шлюз по умолчанию 2.0.0.1.
-![](/kartinko/Pasted_image_20260415144017.png)
+
+![](/kartinko/Image_00037.png)
+
 Шаг 10. Включаем SSHv2 на коммутаторах в Новосибирске, используя имя пользователя "nsk" и пароль типа 5 "cisco".
 Настройка на коммутаторе rus-nsk-s1:
 Сначала генерируем ключи RSA на 768 бит, т.к. это обязательное условие и минимальное количество бит для SSHv2.
-![](/kartinko/Pasted_image_20260415144452.png)
+
+![](/kartinko/Image_00038.png)
+
 ![](/kartinko/Pasted_image_20260415144618.png)
+
 Настраиваем линии VTY для удаленного доступа.
-![](/kartinko/Pasted_image_20260415144800.png)
+![](/kartinko/Image_00039.png)
+
 Настройка на коммутаторе rus-nsk-s2:
-![](/kartinko/Pasted_image_20260415145106.png)
+![](/kartinko/Image_00040.png)
+
 Шаг 11. Настраиваем интерфейс f0/24 коммутатора rus-nsk-s1 как транк, так как он будет подключен к маршрутизатору R1 для межсетевой маршрутизации VLAN на транке.
-![](/kartinko/Pasted_image_20260415145426.png)
+
+![](/kartinko/Image_00041.png)
+
 Шаг 12. Для коммутаторов rus-nsk-s1 и rus-nsk-s2 настраиваем сообщение дня (MOTD) об наименовании коммутатора.
-![](/kartinko/Pasted_image_20260415145539.png)
-![](/kartinko/Pasted_image_20260415145600.png)
+
+![](/kartinko/Image_00043.png)
+
+![](/kartinko/Image_00044.png)
+
 Шаг 13. Настраиваем интерфейсы f0/2, f0/3 и f0/4, соблюдая следующие требования:
 1. Интерфейсы должны переходить в состояние пересылки (forwarding) сразу после подключения к ним кабеля;
 2. Интерфейсы не должны принимать фреймы BPDU;
 3. Нужно отключить проприетарный протокол обнаружения Cisco (CDP);
 4. Нужно убедиться, что трафик поступает только с одного MAC-адреса, который должен быть сохранен в коммутаторах даже после перезагрузки. При нарушении интерфейсы должны переходить в состояние err-disable.
 Настраиваем коммутатор rus-nsk-s1.
-![](/kartinko/Pasted_image_20260415151922.png)
-![](/kartinko/Pasted_image_20260415152040.png)
+
+![](/kartinko/Image_00045.png)
+
+![](/kartinko/Image_00046.png)
+
 Настраиваем коммутатор rus-nsk-s2.
-![](/kartinko/Pasted_image_20260415152129.png)
-![](/kartinko/Pasted_image_20260415152300.png)
+
+![](/kartinko/Image_00047.png)
+
+![](/kartinko/Image_00048.png)
+
 Шаг 14. Защищаем консольное подключение тем же именем пользователя и паролем, что и указывали для линий VTY.
 На коммутаторе rus-nsk-s1:
-![](/kartinko(Pasted_image_20260415154943.png)
+
+![](/kartinko(Image_00052.png)
+
 На коммутаторе rus-nsk-s2
-![](/kartinko/Pasted_image_20260415155017.png)
+
+![](/kartinko/Image_00053.png)
+
 Теперь при входе запрашивается имя пользователя и пароль.
-![](/kartinko/Pasted_image_20260415154020.png)
+
+![](/kartinko/Image_00049.png)
+
 Шаг 15. Отключаем exec-таймаут для консоли и SSH.
-![](/kartinko/Pasted_image_20260415154502.png)
-![](/kartinko/Pasted_image_20260415154524.png)
+
+![](/kartinko/Image_00050.png)
+
+![](/kartinko/Image_00051.png)
+
 Шаг 16. Предотвращаем прерывание консольной сессии перед каждым выводом журнала (логирования).
-![](/kartinko/Pasted_image_20260415155105.png)
-![](/kartinko/Pasted_image_20260415155115.png)
+
+![](/kartinko/Image_00054.png)
+
+![](/kartinko/Image_00055.png)
+
 Шаг 17. Изменим размер буфера истории для этой сессии до 256 строк.
-![](/kartinko/Pasted_image_20260415155226.png)![]/kartinko/(Pasted_image_20260415155244.png)
+
+![](/kartinko/Image_00056.png)
+
+![]/kartinko/(Image_00057.png)
 
 Часть 2.
 Шаг 1. Назначаем интерфейсу f0/1 маршрутизатора rus-nsk-r1 IP-адрес 40.40.40.1/24.
-![](/kartinko/Pasted_image_20260415161936.png)
+
+![](/kartinko/Image_00058.png)
+
 Шаг 2. Настраиваем маршрутизатор rus-nsk-r1 для поддержки маршрутизации между VLAN 1, 2, 3, 4 для SW1 и SW2, используя следующие требования:
 
 VLAN 1 IP-адрес rus-nsk-r1 1.0.0.1.
@@ -114,7 +207,9 @@ VLAN 2 IP-адрес rus-nsk-r1 2.0.0.1.
 VLAN 3 IP-адрес rus-nsk-r1 3.0.0.1.
 
 VLAN 4 IP-адрес rus-nsk-r1 4.0.0.1.
-![](/kartinko/Pasted_image_20260415165828.png)
+
+![](/kartinko/Image_00059.png)
+
 Шаг 3. Настраиваем rus-nsk-r1 в качестве DHCP-сервера для любой машины, подключенной к VLAN 1, 2, 3, 4 на коммутаторах rus-nsk-s1 и rus-nsk-s2, используя следующие требования:
 
 Для VLAN 1 диапазон IP-адресов DHCP на rus-nsk-r1 будет от 1.0.0.100 до 1.0.0.200 не включительно.
@@ -125,11 +220,16 @@ VLAN 4 IP-адрес rus-nsk-r1 4.0.0.1.
 
 Для VLAN 4 диапазон IP-адресов DHCP на rus-nsk-r1 будет от 4.0.0.100 до 4.0.0.200 не включительно.
 Сначала настраиваем исключение: запретим выдачу адресов, которые находятся вне диапазона.
-![](/kartinko/Pasted_image_20260415162211.png)
+
+![](/kartinko/Image_00060.png)
+
 Создаем сами пулы адресов для VLAN’ов, указывая сеть и шлюз по умолчанию, ранее настроенный на rus-nsk-r1.
-![](/kartinko/Pasted_image_20260415162237.png)
+
+![](/kartinko/Image_00061.png)
+
 Шаг 4. Для проверки отправляем ICMP-запрос с rus-nsk-pc1 на 3.0.0.101.
-![](/kartinko/Pasted_image_20260415170932.png)
+
+![](/kartinko/Image_00062.png)
 
 Часть 3.
 Шаг 1. Настраиваем имя хоста многоуровнего коммутатора
