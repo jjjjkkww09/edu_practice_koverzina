@@ -79,7 +79,7 @@
 
 ![](/kartinko/Image_0024.png)
 
-![]/kartinko/(Image_0025.png)
+![](/kartinko/(Image_0025.png)
 
 Устройства в Москве:
 
