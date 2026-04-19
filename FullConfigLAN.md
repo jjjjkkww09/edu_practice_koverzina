@@ -131,6 +131,7 @@
 ![](/kartinko/Image_0034.png)
 
 Настраиваем коммутатор rus-nsk-s2:
+
 ![](/kartinko/Image_0035.png)
 
 #### Шаг 8.
@@ -162,6 +163,7 @@
 ![](/kartinko/Image_0039.png)
 
 Настройка на коммутаторе rus-nsk-s2:
+
 ![](/kartinko/Image_0040.png)
 
 #### Шаг 11.
