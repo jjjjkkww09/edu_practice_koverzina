@@ -1,6 +1,6 @@
 ## Учебная практика
 
-![](/kartinko/kotosk.jpg)
+![](/kartinko/kotos.png)
 
 #### Отчеты находятся в файлах:
 
