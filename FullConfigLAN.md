@@ -399,7 +399,7 @@ MLS:
 
 Теперь подключимся по SSH к rus-nsk-s2.
 
-## вставить картинко
+<img width="485" height="195" alt="image" src="https://github.com/user-attachments/assets/b870cffd-9200-403f-98e0-dae530053ec7" />
 
 #### Шаг 3.
 
