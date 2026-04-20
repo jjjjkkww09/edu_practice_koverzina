@@ -510,4 +510,4 @@ rus-msk-r2
 
 Шаг 5.
 
-![Uploading image.png…]()
+
