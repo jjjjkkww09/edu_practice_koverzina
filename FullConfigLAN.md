@@ -377,11 +377,11 @@
 
 Проведем настройку на маршрутизаторах в Москве.
 
-rus-msk-r1:
+На rus-msk-r1:
 
 <img width="379" height="81" alt="image" src="https://github.com/user-attachments/assets/37d5260c-aef8-40a7-a6fb-7d7534f8d74f" />
 
-rus-msk-r2:
+На rus-msk-r2:
 
 <img width="605" height="104" alt="image" src="https://github.com/user-attachments/assets/65fa34da-a22c-405b-989a-3218d1277e53" />
 
@@ -537,3 +537,46 @@ rus-msk-r2:
 
 Отправляем копию текущей конфигурации rus-msk-r1 на сервер 10.0.0.100, используя протокол FTP.
 
+<img width="465" height="158" alt="image" src="https://github.com/user-attachments/assets/cf68b9b0-be54-4f79-864a-b215e075bf3b" />
+
+#### Шаг 6.
+
+Отправляем копию текущей конфигурации rus-msk-r2 на сервер 10.0.0.100, используя протокол TFTP.
+
+<img width="425" height="173" alt="image" src="https://github.com/user-attachments/assets/a428d7e5-6975-4e26-be38-8d946301010f" />
+
+#### Шаг 7.
+
+Проверяем параметры загрузки на rus-msk-r2, чтобы убедиться, что не используем никаких команд boot system.
+
+<img width="350" height="37" alt="image" src="https://github.com/user-attachments/assets/f51acd7f-ff6e-4caa-812d-1e0bf08b08a1" />
+
+#### Шаг 8.
+
+Проверяем, что rus-msk-r1 может пинговать или подключаться по telnet к rus-msk-r2, используя имя "standby".
+
+<img width="572" height="171" alt="image" src="https://github.com/user-attachments/assets/33db2e9e-51fb-4b63-b4b4-2a7c80a99c1b" />
+
+#### Шаг 9.
+
+Изменяем локальное имя пользователя в rus-msk-r2, используя процедуру восстановления пароля.
+
+Для этого перезагружаем устройство, а при входе в командную строку быстро прожимаем CTRL+C.
+
+<img width="714" height="718" alt="image" src="https://github.com/user-attachments/assets/274ae05a-b216-4b09-9389-d4898be3be43" />
+
+Перезагружаемся и входим без пароля на чистый роутер. Вовзращаем старую конфигурацию.
+
+<img width="648" height="355" alt="image" src="https://github.com/user-attachments/assets/4b8823dd-e8bb-4ffe-8a15-fa5631ecdf37" />
+
+Создаем нового локального пользователя с новым паролем.
+
+<img width="663" height="264" alt="image" src="https://github.com/user-attachments/assets/7a6a5785-880b-4d48-ab66-bbd1467c4ac4" />
+
+Возвращаем роутер в нормальный режим работы, чтобы при следующей загрузки он снова не стал "пустым".
+
+<img width="527" height="146" alt="image" src="https://github.com/user-attachments/assets/a01c9637-44cb-49a6-a58e-2e0deba8c2e0" />
+
+Теперь выходим и входим под новым пользователем.
+
+<img width="661" height="233" alt="image" src="https://github.com/user-attachments/assets/0d880589-892b-45ea-90b9-28330b9024b7" />
