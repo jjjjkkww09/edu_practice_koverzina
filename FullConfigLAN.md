@@ -308,13 +308,13 @@
 
 <img width="296" height="81" alt="image" src="https://github.com/user-attachments/assets/5f13443b-ed7e-4f05-96b9-1f463b47edf3" />
 
-Шаг 4.
+#### Шаг 4.
 
 Назначаем интерфейс f0/4 VLAN 100, а интерфейс f0/5 VLAN 200.
 
 <img width="360" height="80" alt="image" src="https://github.com/user-attachments/assets/52481dea-ef5d-4535-bf98-f0a68d6798e6" />
 
-Шаг 5.
+#### Шаг 5.
 
 Включаем маршрутизацию между VLAN 100 и VLAN 200, используя SVI (Switch Virtual Interface) на MLS со следующими требованиями:
 
@@ -324,7 +324,7 @@
 
 <img width="480" height="143" alt="image" src="https://github.com/user-attachments/assets/c78d5667-625b-45f6-a323-7af094e05625" />
 
-Шаг 6.
+#### Шаг 6.
 
 Изменяем интерфейсы f0/1, f0/2 и f0/3 на интерфейсы 3-го уовня со следующими требованиями:
 
@@ -334,7 +334,7 @@
 
 <img width="621" height="235" alt="image" src="https://github.com/user-attachments/assets/85732133-6c33-4700-b17f-e016fdfc1d29" />
 
-Шаг 7.
+#### Шаг 7.
 
 Пингуем 200.0.0.100 с rus-msk-pc2
 
@@ -342,19 +342,19 @@
 
 ## Часть 4.
 
-Шаг 1.
+#### Шаг 1.
 
 Настраиваем IP-адрес интерфейса f0/0 маршрутизатора rus-nsk-r1 на 10.0.0.2/8, а интерфейса f0/1 на 11.0.0.2/8.
 
 <img width="510" height="149" alt="image" src="https://github.com/user-attachments/assets/b211dfec-a1bf-4fac-ae3b-a57c0828a148" />
 
-Шаг 2.
+#### Шаг 2.
 
 Настраиваем IP-адрес интерфейса f0/0 маршрутизатора rus-nsk-r3 на 10.0.0.3/8, а интерфейса f0/1 на 12.0.0.3/8.
 
 <img width="446" height="115" alt="image" src="https://github.com/user-attachments/assets/47aa09fb-992d-4599-bcc1-da938a3c8f23" />
 
-Шаг 3.
+#### Шаг 3.
 
 Настраиваем протокол Cisco High availability, который обычно использует многоадресный адрес 224.0.0.102, для роутеров в Москве. Используя номер группы 1, настраиваем rus-msk-r1 основным маршрутизатором, а rus-msk-r2 резервным. rus-msk-r1 вытесняет (preempt) rus-msk-r2, когда он возвращается из нерабочего состояния. Виртуальным IP-адресом назначаем 10.0.0.1.. rus-msk-r1 отслеживает свой интерфейс, подключенный к внешним сетям.
 
@@ -368,7 +368,7 @@
 
 ## Часть 5.
 
-Шаг 1.
+#### Шаг 1.
 
 Настраиваем EIGRP с номером автономной системы (AS) 100 на rus-nsk-r1, rus-msk-r2, rus-msk-r2 и MLS.
 
@@ -390,7 +390,7 @@ MLS:
 
 <img width="397" height="134" alt="image" src="https://github.com/user-attachments/assets/50137b35-a6c4-4876-b9b4-ec7e1746d861" />
 
-Шаг 2.
+#### Шаг 2.
 
 С сервера rus-msk-serv1, подключенного к подсети 10.0.0.0/8, подключаемся по SSH к rus-nsk-s1.
 
@@ -400,7 +400,7 @@ MLS:
 
 картинко
 
-Шаг 3.
+#### Шаг 3.
 
 Пингуем с сервера rus-msk-serv1 адрес 2.0.0.50.
 
@@ -408,19 +408,19 @@ MLS:
 
 ## Часть 6.
 
-Шаг 1.
+#### Шаг 1.
 
 Настраиваем rus-nsk-s1 так, чтобы он принимал SSH-соединения только с сервера 10.0.0.100 и ПК 2.0.0.100.
 
 <img width="466" height="133" alt="image" src="https://github.com/user-attachments/assets/3ecc42bc-bbd1-42cf-a752-6d7f5b2ec846" />
 
-Шаг 2.
+#### Шаг 2.
 
 Настраиваем на rus-nsk-r1 ПК 2.0.0.100 как единственную машину в VLAN 2, которой разрешен доступ к веб-серверу 10.0.0.100.
 
 <img width="610" height="161" alt="image" src="https://github.com/user-attachments/assets/61d1f432-4bee-4338-9908-4d0da96b39c2" />
 
-Шаг 3.
+#### Шаг 3.
 
 Настраиваем роутеры rus-nsk-r1 и rus-msk-r2 так, чтобы они могли пинговать любые машины, но никогда не отвечали на ping-запросы, поступающие от каких-либо машин.
 
@@ -434,19 +434,19 @@ MLS:
 
 ## Часть 7.
 
-Шаг 1.
+#### Шаг 1.
 
 Создаем loopback-интерфейс 1 на маршрутизаторе rus-nsk-r1 с IP-адресом 192.168.101.1/24.
 
 <img width="601" height="126" alt="image" src="https://github.com/user-attachments/assets/a175e8fd-de04-4237-936b-a9ba078dd788" />
 
-Шаг 2.
+#### Шаг 2.
 
 Создаем loopback-интерфейс 3 на маршрутизаторе rus-msk-r2 с IP-адресом 192.168.103.3/24.
 
 <img width="578" height="140" alt="image" src="https://github.com/user-attachments/assets/935fdb74-da9c-40a8-b643-eed26c534ce5" />
 
-Шаг 3.
+#### Шаг 3.
 
 Нужно, чтобы rus-nsk-r1 и rus-msk-r2 объявляли созданные loopback-интерфейсы друг другу, испольузя RIPv2.
 
@@ -458,7 +458,7 @@ rus-msk-r2:
 
 <img width="435" height="79" alt="image" src="https://github.com/user-attachments/assets/cb08e917-3639-40b1-943b-41ec67c0f80f" />
 
-Шаг 4.
+#### Шаг 4.
 
 Так как RIPv2 должен работать только на rus-nsk-r1 и rus-msk-r2, отключаем его на других устройствах.
 
@@ -470,7 +470,7 @@ MLS:
 
 <img width="468" height="81" alt="image" src="https://github.com/user-attachments/assets/ba3f7740-58b7-4517-9ff4-b3f2a82d4c03" />
 
-Шаг 5.
+#### Шаг 5.
 
 IP-адреса при использовании туннелей должны быть 200.200.200.х/24, где х = ID маршуртизатора.
 
@@ -482,7 +482,7 @@ rus-msk-r2:
 
 <img width="568" height="159" alt="image" src="https://github.com/user-attachments/assets/d20738ed-a7b6-42ed-9e63-d4412aa1bb77" />
 
-Шаг 6.
+#### Шаг 6.
 
 Используя расширенный ping, проверяем, что loopback-интерфейс rus-nsk-r1 может пинговать loopback-интерфейс rus-msk-r2.
 
@@ -490,7 +490,7 @@ rus-msk-r2:
 
 ## Часть 8.
 
-Шаг 1.
+#### Шаг 1.
 
 Настраиваем MLS и роутеры в Москве и Новосибирске на использование сервера 10.0.0.100 в качестве защищенного NTP-сервера, используя ключ 1 "cisco", а также в качестве Syslog-сервера.
 
@@ -510,7 +510,7 @@ rus-msk-r2:
 
 <img width="649" height="151" alt="image" src="https://github.com/user-attachments/assets/93794b98-5c1e-4279-a7df-e2b474b58c2c" />
 
-Шаг 2.
+#### Шаг 2.
 
 Включаем SNMP на rus-msk-r1 и rus-msk-r2, используя пароль "cisco" для сообщений set и get.
 
@@ -522,19 +522,19 @@ rus-msk-r2:
 
 <img width="619" height="55" alt="image" src="https://github.com/user-attachments/assets/9c19d28e-5c82-42c0-87a1-1550b7a27b50" />
 
-Шаг 3.
+#### Шаг 3.
 
 Включаем telnet на rus-msk-r2, используя сервер 10.0.0.100 в качестве ААА-сервера в качестве первого методо аутентификации. В случае его недоступности rus-msk-r2 должен использовать локальное имя пользователя и пароль. 
 
 <img width="520" height="99" alt="image" src="https://github.com/user-attachments/assets/046118fc-bbfe-4b1b-ae5d-e9b0e1918eed" />
 
-Шаг 4.
+#### Шаг 4.
 
 Настраиваем rus-msk-r1 на использование сервера 10.0.0.100 в качестве FTP-сервера, используя имя пользователя "cisco" и пароль "cisco".
 
 <img width="358" height="45" alt="image" src="https://github.com/user-attachments/assets/07c294e1-aad5-469e-965e-6fc0ab8da49b" />
 
-Шаг 5.
+#### Шаг 5.
 
 Отправляем копию текущей конфигурации rus-msk-r1 на сервер 10.0.0.100, используя протокол FTP.
 
