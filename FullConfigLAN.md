@@ -260,7 +260,7 @@
   
    VLAN 4 IP-адрес rus-nsk-r1 4.0.0.1.
 
-![](/kartinko/Image_0061.png)
+<img width="635" height="487" alt="image" src="https://github.com/user-attachments/assets/9e4f985d-f7dc-4581-9a64-2b9bd13dc3b8" />
 
 #### Шаг 3.
 
@@ -301,3 +301,213 @@
 Включаем возможность маршрутизации на многоуровнем коммутаторе MLS.
 
 <img width="185" height="23" alt="image" src="https://github.com/user-attachments/assets/dc3df69d-b3df-47ba-83cb-98ca29c307bb" />
+
+#### Шаг 3.
+
+Создаем VLAN 100 с именем Sales_dept и VLAN 200 с именем IT_dept.
+
+<img width="296" height="81" alt="image" src="https://github.com/user-attachments/assets/5f13443b-ed7e-4f05-96b9-1f463b47edf3" />
+
+Шаг 4.
+
+Назначаем интерфейс f0/4 VLAN 100, а интерфейс f0/5 VLAN 200.
+
+<img width="360" height="80" alt="image" src="https://github.com/user-attachments/assets/52481dea-ef5d-4535-bf98-f0a68d6798e6" />
+
+Шаг 5.
+
+Включаем маршрутизацию между VLAN
+
+<img width="480" height="143" alt="image" src="https://github.com/user-attachments/assets/c78d5667-625b-45f6-a323-7af094e05625" />
+
+Шаг 6.
+
+Текст
+
+<img width="621" height="235" alt="image" src="https://github.com/user-attachments/assets/85732133-6c33-4700-b17f-e016fdfc1d29" />
+
+Шаг 7.
+
+Текст
+
+kartinka
+
+## Часть 4.
+
+Шаг 1.
+
+текст
+
+<img width="510" height="149" alt="image" src="https://github.com/user-attachments/assets/b211dfec-a1bf-4fac-ae3b-a57c0828a148" />
+
+Шаг 2.
+
+текст
+
+<img width="446" height="115" alt="image" src="https://github.com/user-attachments/assets/47aa09fb-992d-4599-bcc1-da938a3c8f23" />
+
+Шаг 3.
+
+текст
+
+На маршрутизаторе rus-msk-r1:
+
+<img width="352" height="91" alt="image" src="https://github.com/user-attachments/assets/b2f9a2df-071e-4e42-b5ce-2a13c476b6a9" />
+
+На маршрутизаторе rus-msk-r2:
+
+<img width="339" height="48" alt="image" src="https://github.com/user-attachments/assets/74b8eaad-d1ac-4f28-9d00-e7c2c1ee7248" />
+
+## Часть 5.
+
+Шаг 1.
+
+текст
+
+Настройка на маршрутизаторе в Новосибирске rus-nsk-r1:
+
+<img width="431" height="124" alt="image" src="https://github.com/user-attachments/assets/f8225179-f5fc-428b-a452-ccd32f4ec042" />
+
+Настройка на маршрутизаторах в Москве:
+
+rus-msk-r1:
+
+<img width="379" height="81" alt="image" src="https://github.com/user-attachments/assets/37d5260c-aef8-40a7-a6fb-7d7534f8d74f" />
+
+rus-msk-r2:
+
+<img width="605" height="104" alt="image" src="https://github.com/user-attachments/assets/65fa34da-a22c-405b-989a-3218d1277e53" />
+
+MLS:
+
+<img width="397" height="134" alt="image" src="https://github.com/user-attachments/assets/50137b35-a6c4-4876-b9b4-ec7e1746d861" />
+
+Шаг 2.
+
+текст
+
+<img width="502" height="212" alt="image" src="https://github.com/user-attachments/assets/28b39b14-3456-4ce0-99f3-a729baa84800" />
+
+Шаг 3.
+
+текст
+
+<img width="470" height="288" alt="image" src="https://github.com/user-attachments/assets/c58def67-d98b-414e-9f07-0b4606992efd" />
+
+## Часть 6.
+
+Шаг 1.
+
+rus-nsk-s1
+
+<img width="466" height="133" alt="image" src="https://github.com/user-attachments/assets/3ecc42bc-bbd1-42cf-a752-6d7f5b2ec846" />
+
+Шаг 2.
+
+rus-nsk-r1
+
+<img width="610" height="161" alt="image" src="https://github.com/user-attachments/assets/61d1f432-4bee-4338-9908-4d0da96b39c2" />
+
+Шаг 3.
+
+rus-nsk-r1
+
+<img width="426" height="147" alt="image" src="https://github.com/user-attachments/assets/f8d6fed0-13a0-42ae-a8db-08d10e120b16" />
+
+rus-msk-r2
+
+<img width="504" height="235" alt="image" src="https://github.com/user-attachments/assets/6cacce5f-7e2a-4ca6-b6f3-d2e80d2e1bc4" />
+
+## Часть 7.
+
+Шаг 1.
+
+rus-nsk-r1
+
+<img width="601" height="126" alt="image" src="https://github.com/user-attachments/assets/a175e8fd-de04-4237-936b-a9ba078dd788" />
+
+Шаг 2.
+
+rus-msk-r2
+
+<img width="578" height="140" alt="image" src="https://github.com/user-attachments/assets/935fdb74-da9c-40a8-b643-eed26c534ce5" />
+
+Шаг 3.
+
+rus-nsk-r1
+
+<img width="422" height="74" alt="image" src="https://github.com/user-attachments/assets/dbf5bc08-bf3a-420d-b750-8b95bcace48b" />
+
+rus-msk-r2
+
+<img width="435" height="79" alt="image" src="https://github.com/user-attachments/assets/cb08e917-3639-40b1-943b-41ec67c0f80f" />
+
+Шаг 4.
+
+rus-msk-r1
+
+<img width="483" height="86" alt="image" src="https://github.com/user-attachments/assets/89b826e2-ccc6-4f27-b75a-c4359d2f89ec" />
+
+MLS
+
+<img width="468" height="81" alt="image" src="https://github.com/user-attachments/assets/ba3f7740-58b7-4517-9ff4-b3f2a82d4c03" />
+
+Шаг 5.
+
+rus-nsk-r1
+
+<img width="587" height="128" alt="image" src="https://github.com/user-attachments/assets/7b66aec1-0732-43ef-a842-14d613161117" />
+
+rus-msk-r2
+
+<img width="568" height="159" alt="image" src="https://github.com/user-attachments/assets/d20738ed-a7b6-42ed-9e63-d4412aa1bb77" />
+
+Шаг 6.
+
+текст
+
+<img width="580" height="310" alt="image" src="https://github.com/user-attachments/assets/8a2a9c03-f8cd-4c10-946a-13e5e10ced0e" />
+
+## Часть 8.
+
+Шаг 1.
+
+rus-nsk-r1
+
+<img width="641" height="131" alt="image" src="https://github.com/user-attachments/assets/51b7b75b-9f31-4b12-bfa9-bbb66bfac3b5" />
+
+rus-msk-r1
+
+<img width="653" height="155" alt="image" src="https://github.com/user-attachments/assets/e13866a2-6c8b-4183-b8b5-cf52009adf00" />
+
+rus-msk-r2
+
+<img width="655" height="169" alt="image" src="https://github.com/user-attachments/assets/7fb3c0dc-6a4f-4d52-856d-e557026b345c" />
+
+MLS
+
+<img width="649" height="151" alt="image" src="https://github.com/user-attachments/assets/93794b98-5c1e-4279-a7df-e2b474b58c2c" />
+
+Шаг 2.
+
+rus-msk-r1
+
+<img width="591" height="67" alt="image" src="https://github.com/user-attachments/assets/195ff541-6397-4c1e-91d2-a64eab373287" />
+
+rus-msk-r2
+
+<img width="619" height="55" alt="image" src="https://github.com/user-attachments/assets/9c19d28e-5c82-42c0-87a1-1550b7a27b50" />
+
+Шаг 3.
+
+rus-msk-r2
+
+<img width="520" height="99" alt="image" src="https://github.com/user-attachments/assets/046118fc-bbfe-4b1b-ae5d-e9b0e1918eed" />
+
+Шаг 4.
+
+<img width="358" height="45" alt="image" src="https://github.com/user-attachments/assets/07c294e1-aad5-469e-965e-6fc0ab8da49b" />
+
+Шаг 5.
+
+![Uploading image.png…]()
