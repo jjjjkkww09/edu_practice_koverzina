@@ -1,4 +1,4 @@
-## Часть 1.
+<img width="472" height="97" alt="image" src="https://github.com/user-attachments/assets/b668899c-7aaf-48ff-94a0-1baf84cd3827" />## Часть 1.
 
 #### Шаг 1.
 
@@ -292,4 +292,12 @@
 
 #### Шаг 1.
 
-Настраиваем имя хоста многоуровнего коммутатора
+Настраиваем имя хоста многоуровнего коммутатора на MLS.
+
+<img width="472" height="97" alt="image" src="https://github.com/user-attachments/assets/4c9dd279-8000-497d-bf52-12c2791be820" />
+
+#### Шаг 2.
+
+Включаем возможность маршрутизации на многоуровнем коммутаторе MLS.
+
+<img width="185" height="23" alt="image" src="https://github.com/user-attachments/assets/dc3df69d-b3df-47ba-83cb-98ca29c307bb" />
