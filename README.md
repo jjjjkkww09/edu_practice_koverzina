@@ -6,6 +6,6 @@
 
 К ПМ.02 - FullConfigLAN.md ; ConfigLAN.pkt
 
-К ПМ.03 - еще нет
+К ПМ.03 - FullConfigWAN.md ; ConfigWAN.pkt
 
 К ПМ.04 - еще нет
