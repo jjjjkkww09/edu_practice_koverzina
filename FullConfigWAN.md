@@ -469,3 +469,474 @@ R1973 должен объявить свою петлевую сеть (loopback
 На R1973:
 
 ![Uploading image.png…]()
+
+## Полные конфигурации устройств
+
+#### R1
+
+```
+Current configuration : 1201 bytes
+!
+version 15.1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname Router
+!
+!
+!
+!
+!
+!
+!
+!
+ip cef
+ipv6 unicast-routing
+!
+no ipv6 cef
+!
+!
+!
+!
+license udi pid CISCO2811/K9 sn FTX10177BPO-
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface FastEthernet0/0
+ ip address 10.1.1.1 255.255.255.0
+ ip helper-address 10.23.23.100
+ ip helper-address 10.23.23.3
+ duplex auto
+ speed auto
+ ipv6 address FE80::1 link-local
+ ipv6 address 2001:10:10:10::/64 eui-64
+ ipv6 ospf 100 area 1
+!
+interface FastEthernet0/1
+ ip address 10.12.12.1 255.255.255.0
+ duplex auto
+ speed auto
+ ipv6 address FE80::1 link-local
+ ipv6 address 2001:12:12:12::1/64
+ ipv6 ospf 100 area 0
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+router ospf 100
+ log-adjacency-changes
+ passive-interface default
+ no passive-interface FastEthernet0/1
+ network 10.1.1.0 0.0.0.255 area 1
+ network 10.12.12.0 0.0.0.255 area 0
+!
+ipv6 router ospf 100
+ router-id 0.0.0.1
+ log-adjacency-changes
+ passive-interface default
+ no passive-interface FastEthernet0/1
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+!
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login
+!
+!
+!
+end
+```
+
+#### R2
+
+```
+Current configuration : 1072 bytes
+!
+version 15.1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname Router
+!
+!
+!
+!
+!
+!
+!
+!
+ip cef
+ipv6 unicast-routing
+!
+no ipv6 cef
+!
+!
+!
+!
+license udi pid CISCO2811/K9 sn FTX1017O96U-
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface FastEthernet0/0
+ ip address 10.23.23.2 255.255.255.0
+ ip ospf priority 255
+ duplex auto
+ speed auto
+ ipv6 address FE80::2 link-local
+ ipv6 address 2001:23:23:23::2/64
+ ipv6 ospf 100 area 23
+!
+interface FastEthernet0/1
+ ip address 10.12.12.2 255.255.255.0
+ ip ospf priority 255
+ duplex auto
+ speed auto
+ ipv6 address FE80::2 link-local
+ ipv6 address 2001:12:12:12::2/64
+ ipv6 ospf 100 area 0
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+router ospf 100
+ router-id 0.0.0.2
+ log-adjacency-changes
+ network 10.12.12.0 0.0.0.255 area 0
+ network 10.23.23.0 0.0.0.255 area 23
+!
+ipv6 router ospf 100
+ router-id 0.0.0.2
+ log-adjacency-changes
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+!
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login
+!
+!
+!
+end
+```
+
+#### R3
+
+```
+Current configuration : 1948 bytes
+!
+version 15.1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname Router
+!
+!
+!
+!
+ip dhcp excluded-address 10.1.1.1
+!
+ip dhcp pool LAN_R1
+ network 10.1.1.0 255.255.255.0
+ default-router 10.1.1.1
+ dns-server 8.8.8.8
+!
+!
+!
+no ip cef
+ipv6 unicast-routing
+!
+no ipv6 cef
+!
+!
+!
+username R1973 password 0 cisco
+!
+!
+license udi pid CISCO2911/K9 sn FTX152406YK-
+license boot module c2900 technology-package securityk9
+license boot module c2900 technology-package uck9
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface Loopback3
+ ip address 3.3.3.3 255.0.0.0
+!
+interface Loopback33
+ ip address 33.33.33.33 255.0.0.0
+!
+interface GigabitEthernet0/0
+ ip address 10.23.23.3 255.255.255.0
+ duplex auto
+ speed auto
+ ipv6 address FE80::3 link-local
+ ipv6 address 2001:23:23:23::3/64
+ ipv6 ospf 100 area 23
+!
+interface GigabitEthernet0/1
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface GigabitEthernet0/2
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface Serial0/3/0
+ ip address 30.30.30.3 255.255.255.0
+ encapsulation ppp
+ ppp authentication chap
+ ipv6 address FE80::3 link-local
+ ipv6 address 2001:30:30:30::3/64
+ ipv6 eigrp 100
+ clock rate 2000000
+!
+interface Serial0/3/1
+ no ip address
+ clock rate 2000000
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+router ospf 100
+ log-adjacency-changes
+ network 10.23.23.0 0.0.0.255 area 23
+ network 3.0.0.0 0.255.255.255 area 23
+ network 33.0.0.0 0.255.255.255 area 23
+ default-information originate
+!
+router bgp 3
+ bgp log-neighbor-changes
+ no synchronization
+ neighbor 30.30.30.73 remote-as 1973
+!
+ipv6 router ospf 100
+ router-id 0.0.0.3
+ default-information originate
+ log-adjacency-changes
+!
+ipv6 router eigrp 100
+ eigrp router-id 0.0.0.3
+ no shutdown 
+!
+ip classless
+!
+ip flow-export version 9
+!
+ipv6 route ::/0 Serial0/3/0
+!
+!
+!
+!
+!
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login
+!
+!
+!
+end
+```
+
+#### R1973
+
+```
+Current configuration : 1412 bytes
+!
+version 15.1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname Router
+!
+!
+!
+!
+!
+!
+!
+!
+no ip cef
+ipv6 unicast-routing
+!
+no ipv6 cef
+!
+!
+!
+username R3 password 0 cisco
+!
+!
+license udi pid CISCO2911/K9 sn FTX1524J0BO-
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface Loopback1973
+ ip address 73.73.73.73 255.255.255.0
+ ipv6 address 2001:73:73:73::73/64
+ ipv6 eigrp 100
+!
+interface GigabitEthernet0/0
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface GigabitEthernet0/1
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface GigabitEthernet0/2
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface Serial0/3/0
+ ip address 30.30.30.73 255.255.255.0
+ encapsulation ppp
+ ppp authentication chap
+ ipv6 address FE80::1973 link-local
+ ipv6 address 2001:30:30:30::73/64
+ ipv6 eigrp 100
+ clock rate 2000000
+!
+interface Serial0/3/1
+ no ip address
+ clock rate 2000000
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+router bgp 1973
+ bgp log-neighbor-changes
+ no synchronization
+ neighbor 30.30.30.3 remote-as 3
+ network 73.73.73.0 mask 255.255.255.0
+!
+ipv6 router eigrp 100
+ eigrp router-id 0.0.0.73
+ no shutdown 
+!
+ip classless
+ip route 0.0.0.0 0.0.0.0 30.30.30.3 
+!
+ip flow-export version 9
+!
+ipv6 route ::/0 2001:30:30:30::3
+!
+!
+!
+!
+!
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login
+!
+!
+!
+end
+```
