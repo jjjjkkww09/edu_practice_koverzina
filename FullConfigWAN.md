@@ -4,7 +4,7 @@
 
 Строим топологию сети согласно схеме:
 
-<img width="1584" height="610" alt="image" src="https://github.com/user-attachments/assets/10e27099-0a59-4ece-9a4a-6c18210a8a1a" />
+<img width="1565" height="564" alt="image" src="https://github.com/user-attachments/assets/707e7966-fce9-4248-ac2d-1ee58940c000" />
 
 #### Шаг 2.
 
