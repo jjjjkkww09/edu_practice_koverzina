@@ -1,4 +1,4 @@
-<img width="303" height="26" alt="image" src="https://github.com/user-attachments/assets/e9af97b1-fc65-456b-85cd-868b8b67f79b" />## Часть 1.
+## Часть 1.
 
 #### Шаг 1.
 
@@ -457,5 +457,15 @@ R1973 должен объявить свою петлевую сеть (loopback
 #### Шаг 5.
 
 Настройте на R1973 маршрут по умолчанию IPv6, указывающий на R3 в качестве следующего хопа (next hop) для связи с любыми другими сетями.
+
+<img width="284" height="53" alt="image" src="https://github.com/user-attachments/assets/c086f689-7d8e-43ba-8f1d-03648d14cb92" />
+
+Прописываем "no shutdown", иначе EIGRPv6 не будет должным образом работать и функционировать.
+
+На R3:
+
+<img width="283" height="55" alt="image" src="https://github.com/user-attachments/assets/e93597a1-9bf4-4784-80a1-e24b6bc228e8" />
+
+На R1973:
 
 ![Uploading image.png…]()
