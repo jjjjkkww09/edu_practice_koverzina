@@ -4,8 +4,8 @@
 
 #### Работы находятся в файлах:
 
-К ПМ.02 - FullConfigLAN.md ; ConfigLAN.pkt
+К ПМ.02 - FullConfigLAN.md
 
-К ПМ.03 - FullConfigWAN.md ; ConfigWAN.pkt
+К ПМ.03 - FullConfigWAN.md
 
 К ПМ.04 - BasicBash.md ; VoIP.md 
