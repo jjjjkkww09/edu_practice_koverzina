@@ -2,10 +2,10 @@
 
 ![](/kartinko/kotos.png)
 
-#### Работы находятся в файлах:
+#### Отчеты по работам находятся в файлах:
 
-К ПМ.02 - FullConfigLAN.md
+ПМ.02 - FullConfigLAN.md
 
-К ПМ.03 - FullConfigWAN.md
+ПМ.03 - FullConfigWAN.md
 
-К ПМ.04 - BasicBash.md ; VoIP.md 
+ПМ.04 - BasicBash.md ; VoIP.md 
