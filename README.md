@@ -8,4 +8,4 @@
 
 К ПМ.03 - FullConfigWAN.md ; ConfigWAN.pkt
 
-К ПМ.04 - Basic Bash: BasicBash.md ; VoIP.md 
+К ПМ.04 - BasicBash.md ; VoIP.md 
