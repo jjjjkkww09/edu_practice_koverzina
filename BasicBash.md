@@ -1,4 +1,4 @@
-## .sh файлы находятся в /bashscripts.
+### .sh файлы находятся в /bashscripts.
 
 ## Основы Bash
 
