@@ -122,6 +122,6 @@
   
 - default-router 192.168.1.1
   
-option 150 ip 192.168.1.1
+- option 150 ip 192.168.1.1
 
 ## Лабораторная работа №3. Настройка конфигурации Cisco CallManager Express на маршрутизаторе Cisco 2811
