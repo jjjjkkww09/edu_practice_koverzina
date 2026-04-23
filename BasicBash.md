@@ -55,3 +55,27 @@
 <img width="271" height="29" alt="image" src="https://github.com/user-attachments/assets/8bac0061-de49-4b0f-bb57-cbbf2a8213ff" />
 
 *Создание файла и переход в редактор*
+
+<img width="965" height="569" alt="image" src="https://github.com/user-attachments/assets/92ca5dc8-49b5-4650-a7b7-7bbc9c378c04" />
+
+*Написанный скрипт*
+
+<img width="303" height="61" alt="image" src="https://github.com/user-attachments/assets/9de486ab-5c7d-4a2e-be1c-baef2b2534e7" />
+
+*Выдача прав и вывод скрипта*
+
+## 5. my_dir.sh
+
+Создаем скрипт, который принимает путь к директории в качестве аргумента и выводи список всех файлов в этой директории.
+
+<img width="279" height="33" alt="image" src="https://github.com/user-attachments/assets/24ac4468-b12e-4199-b513-ae86e496c099" />
+
+*Создание файла и переход в редактор*
+
+<img width="959" height="493" alt="image" src="https://github.com/user-attachments/assets/51f0f9f8-ea94-4c23-adeb-585f62fd3d1f" />
+
+*Написанный скрипт*
+
+<img width="975" height="661" alt="image" src="https://github.com/user-attachments/assets/61ce9811-7e93-4d7c-bed5-6413eb41328c" />
+
+*Вывод скрипта*
