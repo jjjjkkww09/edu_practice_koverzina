@@ -88,6 +88,219 @@
 
 *Принятый вызов*
 
+#### Полные конфигурации устройств
+
+#### CMERouter
+
+```
+Current configuration : 1092 bytes
+!
+version 15.1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname CMERouter
+!
+!
+!
+!
+!
+ip dhcp pool VOICE
+ network 192.168.10.0 255.255.255.0
+ default-router 192.168.10.1
+ option 150 ip 192.168.10.1
+!
+!
+!
+ip cef
+no ipv6 cef
+!
+!
+!
+!
+license udi pid CISCO2811/K9 sn FTX10175N11-
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface FastEthernet0/0
+ ip address 192.168.10.1 255.255.255.0
+ duplex auto
+ speed auto
+!
+interface FastEthernet0/1
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+!
+!
+telephony-service
+ max-ephones 5
+ max-dn 5
+ ip source-address 192.168.10.1 port 2000
+ auto assign 4 to 6
+ auto assign 1 to 5
+!
+ephone-dn 1
+ number 54001
+!
+ephone-dn 2
+ number 54002
+!
+ephone 1
+ device-security-mode none
+ mac-address 0030.F27A.8C22
+ type 7960
+ button 1:1
+!
+ephone 2
+ device-security-mode none
+ mac-address 000D.BDD0.5631
+ type 7960
+ button 1:2
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login
+!
+!
+!
+end
+
+
+CMERouter#
+%IPPHONE-6-REGISTER: ephone-2 IP:192.168.10.3 Socket:2 DeviceType:Phone has registered.
+
+%IPPHONE-6-REGISTER: ephone-1 IP:192.168.10.2 Socket:2 DeviceType:Phone has registered.
+
+```
+
+#### Switch
+
+```
+Current configuration : 1164 bytes
+!
+version 12.1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname Switch
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+interface FastEthernet0/1
+!
+interface FastEthernet0/2
+ switchport mode access
+ switchport voice vlan 1
+ spanning-tree portfast
+!
+interface FastEthernet0/3
+ switchport mode access
+ switchport voice vlan 1
+ spanning-tree portfast
+!
+interface FastEthernet0/4
+!
+interface FastEthernet0/5
+!
+interface FastEthernet0/6
+!
+interface FastEthernet0/7
+!
+interface FastEthernet0/8
+!
+interface FastEthernet0/9
+!
+interface FastEthernet0/10
+!
+interface FastEthernet0/11
+!
+interface FastEthernet0/12
+!
+interface FastEthernet0/13
+!
+interface FastEthernet0/14
+!
+interface FastEthernet0/15
+!
+interface FastEthernet0/16
+!
+interface FastEthernet0/17
+!
+interface FastEthernet0/18
+!
+interface FastEthernet0/19
+!
+interface FastEthernet0/20
+!
+interface FastEthernet0/21
+!
+interface FastEthernet0/22
+!
+interface FastEthernet0/23
+!
+interface FastEthernet0/24
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+!
+!
+!
+line con 0
+!
+line vty 0 4
+ login
+line vty 5 15
+ login
+!
+!
+!
+!
+end
+```
+
 #### Контрольные вопросы
 
 1. SIP (Session Initiation Protocol) - протокол для установки связи? используется для настройки IP-телефонов через сервер Generic Server.
@@ -545,11 +758,11 @@ end
 
 Настраиваем интерфейс управления коммутатором в сети VLAN через назначение диапазона портов.
 
-<img width="399" height="72" alt="image" src="https://github.com/user-attachments/assets/bd69747a-2c2d-4417-b75a-b4a026f2081d" />
+<img width="391" height="58" alt="image" src="https://github.com/user-attachments/assets/92438c91-60b3-4297-aa19-2cf85ba52b13" />
 
 *Настройка интерфейса управления коммутатором в сети VLAN*
 
-Переходим к настрйокам на маршрутизаторе.
+Переходим к настройкам на маршрутизаторе.
 
 Включаем интерфейс fa0/0.
 
@@ -591,11 +804,920 @@ end
 
 *Настройка IP-телефонов*
 
+#### Полная конфигурация устройств.
+
+#### Router
+
+```
+Current configuration : 1610 bytes
+!
+version 15.1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname Router
+!
+!
+!
+!
+ip dhcp excluded-address 192.168.10.1 192.168.10.9
+ip dhcp excluded-address 192.168.20.1 192.168.20.9
+!
+ip dhcp pool Data
+ network 192.168.10.0 255.255.255.0
+ default-router 192.168.10.1
+ip dhcp pool Voice
+ network 192.168.20.0 255.255.255.0
+ default-router 192.168.20.1
+ option 150 ip 192.168.20.1
+!
+!
+!
+ip cef
+no ipv6 cef
+!
+!
+!
+!
+license udi pid CISCO2811/K9 sn FTX10171931-
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface FastEthernet0/0
+ no ip address
+ duplex auto
+ speed auto
+!
+interface FastEthernet0/0.10
+ encapsulation dot1Q 10
+ ip address 192.168.10.1 255.255.255.0
+!
+interface FastEthernet0/0.20
+ encapsulation dot1Q 20
+ ip address 192.168.20.1 255.255.255.0
+!
+interface FastEthernet0/0.99
+ encapsulation dot1Q 99 native
+ ip address 192.168.99.1 255.255.255.0
+!
+interface FastEthernet0/1
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+!
+!
+telephony-service
+ max-ephones 3
+ max-dn 3
+ ip source-address 192.168.20.1 port 2000
+!
+ephone-dn 1
+ number 101
+!
+ephone-dn 2
+ number 102
+!
+ephone-dn 3
+ number 103
+!
+ephone 1
+ device-security-mode none
+ mac-address 00D0.D389.5DE5
+ type 7960
+ button 1:1
+!
+ephone 2
+ device-security-mode none
+ mac-address 00E0.F737.1C36
+ type 7960
+ button 1:2
+!
+ephone 3
+ device-security-mode none
+ mac-address 0005.5E34.7BE9
+ type 7960
+ button 1:3
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login
+!
+!
+!
+end
+```
+
+### Switch
+
+```
+Current configuration : 1398 bytes
+!
+version 12.1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname Switch
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+interface FastEthernet0/1
+ switchport trunk native vlan 99
+ switchport mode trunk
+!
+interface FastEthernet0/2
+ switchport access vlan 10
+ switchport mode access
+ switchport voice vlan 20
+!
+interface FastEthernet0/3
+ switchport access vlan 10
+ switchport mode access
+ switchport voice vlan 20
+!
+interface FastEthernet0/4
+ switchport access vlan 10
+ switchport mode access
+ switchport voice vlan 20
+!
+interface FastEthernet0/5
+!
+interface FastEthernet0/6
+!
+interface FastEthernet0/7
+!
+interface FastEthernet0/8
+!
+interface FastEthernet0/9
+!
+interface FastEthernet0/10
+!
+interface FastEthernet0/11
+!
+interface FastEthernet0/12
+!
+interface FastEthernet0/13
+!
+interface FastEthernet0/14
+!
+interface FastEthernet0/15
+!
+interface FastEthernet0/16
+!
+interface FastEthernet0/17
+!
+interface FastEthernet0/18
+!
+interface FastEthernet0/19
+!
+interface FastEthernet0/20
+!
+interface FastEthernet0/21
+!
+interface FastEthernet0/22
+!
+interface FastEthernet0/23
+!
+interface FastEthernet0/24
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan99
+ ip address 192.168.99.10 255.255.255.0
+!
+ip default-gateway 192.168.99.1
+!
+!
+!
+!
+line con 0
+!
+line vty 0 4
+ login
+line vty 5 15
+ login
+!
+!
+!
+!
+end
+```
+
+#### Контрольные вопросы.
+
+1. SIP-телефоны - это конечные устройства связи, которые используют протокол SIP для установления связи. Они используют интернет-соединение вместо традиционных телефонных линий для передачи голоса.
+
+2. Voice over IP - это технология, позволяющая реализовать передачу голосового трафика поверх сетевого протокола IP. Это означает инкапсуляцию звуковых данных в IP-пакеты, что позволяет использовать одну и ту же сетевую инфраструктуру как для данных, так и для голоса.
+
+3. VoIP - это методология и группа технологий, обеспечивающих передачу голосовых сообщений, видеосессий и других мультимедийных данных через IP-сети.
+
+4. Cisco Networking Academy (NetAcad), документация Cisco по настройке функций телефонии (CME — Call Manager Express).
+
+5. Это физические или виртуальные устройства, которые подключаются к коммутатору. Они преобразуют аналоговый голос в цифровой вид и обратно, а также поддерживают такие функции, как питание через Ethernet (PoE) и визуальную индикацию вызовов.
+
+6. IP-телефония включает в себя передачу звука (голосового трафика) и инфраструктуру: маршрутизаторы с поддержкой телефонии, коммутаторы с поддержкой Voice VLAN и конечные IP-аппараты, объединенные в единую управляемую сеть.
+
+7. VoIP-телефон - это устройство, которое реализует функции IP-телефона.
+
+8. Маршрут по умолчанию настраивается на маршрутизаторе (Router) для пересылки трафика, если в таблице маршрутизации нет совпадений для сети назначения. Это делается в режиме глобальной конфигурации командой:
+
+- Router(config)# ip route 0.0.0.0 0.0.0.0 [адрес_следующего_узла или выходной_интерфейс]
+
+Это позволяет устройствам из локальной сети выходить за её пределы.
 
 ## Лабораторная работа №7. Построение сети IP-телефонии между удаленными маршрутизаторами в среде Cisco Packet Tracer
 
-тут будет лаба
+Собираем топологию сети.
+
+<img width="1440" height="555" alt="image" src="https://github.com/user-attachments/assets/74b82b1c-1287-4a37-b061-b394b749688e" />
+
+*Топология сети*
+
+Меняем названия маршрутизаторов на RouterA и RouterB.
+
+<img width="479" height="58" alt="image" src="https://github.com/user-attachments/assets/0a1a626f-e0b8-4113-83d1-c131a44ab5dd" />
+
+*Смена имени первого маршрутизатора на RouterA*
+
+<img width="488" height="44" alt="image" src="https://github.com/user-attachments/assets/e85cf841-2060-46d4-acd2-387a6b11095d" />
+
+*Смена имени второго маршрутизатора на RouterB
+
+Настраиваем интерфейс f0/0 на маршрутизаторе RouterA.
+
+<img width="607" height="142" alt="image" src="https://github.com/user-attachments/assets/f2a9a275-39b0-480b-a360-e1d8cb0b81e1" />
+
+*Конфигурация f0/0 на RouterA*
+
+Настраиваем интерфейс f0/0 на маршрутизаторе RouterB.
+
+<img width="622" height="139" alt="image" src="https://github.com/user-attachments/assets/b68ce1b9-5da2-4ccc-8e79-f630d71c4cca" />
+
+*Конфигурация f0/0 на RouterB*
+
+Настраиваем интерфейс s0/3/0 на маршрутизаторах Cisco 2811.
+
+<img width="426" height="61" alt="image" src="https://github.com/user-attachments/assets/87aebcd6-c398-4ac8-b346-079ceab10efa" />
+
+*Конфигурация s0/3/0 на RouterA*
+
+<img width="431" height="129" alt="image" src="https://github.com/user-attachments/assets/ecb213ab-6648-48b2-adb0-b2e70485389f" />
+
+*Конфигурация s0/3/0 на RouterB*
+
+Для автоматической настройки компьютеров и IP-телефонов нужно настроить DHCP-сервер на маршрутизаторе.
+
+В конфигурационном режиме создаем пул DHCP-адреса с названием T1. Задаем сеть, в которой будет работать DHCP-сервер. Указываем IP-адрес нужного VLAN для передачи данных. Включаем опцию 150.
+
+<img width="460" height="74" alt="image" src="https://github.com/user-attachments/assets/19161903-3ea1-4603-a3ee-4c936f554012" />
+
+*Настройка на RouterA*
+
+<img width="404" height="71" alt="image" src="https://github.com/user-attachments/assets/39fe5069-ae8b-45c3-8f80-5fd5c518799a" />
+
+*Настройка на RouterB*
+
+Настроим динамическую маршрутизацию на основе протокола RIPv2 для передачи информации между маршрутизаторами в сети.
+
+<img width="343" height="66" alt="image" src="https://github.com/user-attachments/assets/1687f4f3-afc8-47f1-b97b-478db0c9f66f" />
+
+*Настройка на RouterA*
+
+<img width="314" height="64" alt="image" src="https://github.com/user-attachments/assets/4047d9a7-64cf-4df7-b46e-8e5d0b39f068" />
+
+*Настройка на RouterB*
+
+Переходим к настройке телефонного сервиса в автоматическом режиме. Здесь мы задаем максимальное количество присваиваемых номеров, максимальное количество IP-телефонов, IP-адрес голосового шлюза и настраиваем автоматическое назначение внешних номеров.
+
+<img width="485" height="86" alt="image" src="https://github.com/user-attachments/assets/53a2574b-2a10-4f13-b51d-ed0a3ce2f0ea" />
+
+*Настройка на RouterA*
+
+<img width="481" height="87" alt="image" src="https://github.com/user-attachments/assets/dd71156e-0d6b-487c-883e-60d0d06514ec" />
+
+*Настройка на RouterB*
+
+На коммутаторах меняем имя устройства и назначаем диапазоны портов.
+
+<img width="367" height="67" alt="image" src="https://github.com/user-attachments/assets/aaa779f0-5e3d-4a0f-94d6-dc9fe5d45b99" />
+
+*Настройка на SwitchA*
+
+<img width="382" height="68" alt="image" src="https://github.com/user-attachments/assets/d75e13d9-de8f-46c4-bd8c-b204ed5625bc" />
+
+*Настройка на SwitchB*
+
+Переходим к настройке телефонных линий на маршрутизаторах.
+
+<img width="628" height="257" alt="image" src="https://github.com/user-attachments/assets/ce0f4cb2-c82c-4a0b-9381-ceb578e8225b" />
+
+*Настройка на RouterA*
+
+<img width="641" height="270" alt="image" src="https://github.com/user-attachments/assets/39159e62-b806-436a-a3b2-09184093b1d3" />
+
+*Настройка на RouterB*
+
+Надо настроить
+
+<img width="414" height="45" alt="image" src="https://github.com/user-attachments/assets/08261ac2-f717-48f5-b68c-3025310a8e02" />
+
+*Настройка на RouterA*
+
+<img width="438" height="49" alt="image" src="https://github.com/user-attachments/assets/4c9f986f-2c3f-4be6-aed9-9c6f65ffb7a6" />
+
+*Настройка на RouterB*
+
+Проверяем правильность настройки: позвоним с IP-телефона с номером 1101 на IP-телефон с номером 1201.
+
+<img width="1411" height="715" alt="image" src="https://github.com/user-attachments/assets/cfd358ed-2072-483a-907d-4612126cf378" />
+
+*Входящий вызов*
+
+<img width="1421" height="710" alt="image" src="https://github.com/user-attachments/assets/446c99d5-4939-4683-a096-099d5f047eae" />
+
+*Принятый вызов*
+
+Проведем ICMP-запрос с ПК, подключенного к SwitchA к ПК, подключенному к SwitchB и наоборот.
+
+<img width="480" height="228" alt="image" src="https://github.com/user-attachments/assets/ac289781-4b8f-4b3f-ac75-217f15ebe318" />
+
+*ping с PC-A к PC-B*
+
+<img width="478" height="227" alt="image" src="https://github.com/user-attachments/assets/1c6fdbd2-5225-4c55-920a-7d144ef9469e" />
+
+*ping с PC-B к PC-A*
+
+#### Полные конфигурации устройств
+
+#### RouterA
+
+```
+Current configuration : 1495 bytes
+!
+version 15.1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname RouterA
+!
+!
+!
+!
+!
+ip dhcp pool T1
+ network 192.168.1.0 255.255.255.224
+ default-router 192.168.1.1
+ option 150 ip 192.168.1.1
+!
+!
+!
+no ip cef
+no ipv6 cef
+!
+!
+!
+!
+license udi pid CISCO2811/K9 sn FTX1017AY91-
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface FastEthernet0/0
+ ip address 192.168.1.1 255.255.255.224
+ duplex auto
+ speed auto
+!
+interface FastEthernet0/1
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface Serial0/3/0
+ ip address 10.0.1.1 255.255.255.252
+ clock rate 64000
+!
+interface Serial0/3/1
+ no ip address
+ clock rate 2000000
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+router rip
+ version 2
+ network 10.0.0.0
+ network 192.168.1.0
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+!
+!
+dial-peer voice 1 voip
+ destination-pattern 12..
+ session target ipv4:10.0.1.2
+!
+telephony-service
+ max-ephones 5
+ max-dn 5
+ ip source-address 192.168.1.1 port 2000
+ auto assign 4 to 6
+ auto assign 1 to 5
+!
+ephone-dn 1
+ number 1101
+!
+ephone-dn 2
+ number 1102
+!
+ephone-dn 3
+ number 1103
+!
+ephone 1
+ device-security-mode none
+ mac-address 0040.0B98.2E5E
+ type 7960
+ button 1:1
+!
+ephone 2
+ device-security-mode none
+ mac-address 000C.85C6.0E74
+ type 7960
+ button 1:2
+!
+ephone 3
+ device-security-mode none
+ mac-address 00D0.FF27.86C3
+ type 7960
+ button 1:3
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login
+!
+!
+!
+end
+```
+#### RouterB
+
+```
+Current configuration : 1471 bytes
+!
+version 15.1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname RouterB
+!
+!
+!
+!
+!
+ip dhcp pool T1
+ network 172.16.1.0 255.255.255.224
+ default-router 172.16.1.1
+ option 150 ip 172.16.1.1
+!
+!
+!
+no ip cef
+no ipv6 cef
+!
+!
+!
+!
+license udi pid CISCO2811/K9 sn FTX10176GZL-
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface FastEthernet0/0
+ ip address 172.16.1.1 255.255.255.224
+ duplex auto
+ speed auto
+!
+interface FastEthernet0/1
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface Serial0/3/0
+ ip address 10.0.1.2 255.255.255.252
+!
+interface Serial0/3/1
+ no ip address
+ clock rate 2000000
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+router rip
+ version 2
+ network 10.0.0.0
+ network 172.16.0.0
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+!
+!
+dial-peer voice 1 voip
+ destination-pattern 11..
+ session target ipv4:10.0.1.1
+!
+telephony-service
+ max-ephones 5
+ max-dn 5
+ ip source-address 172.16.1.1 port 2000
+ auto assign 4 to 6
+ auto assign 1 to 5
+!
+ephone-dn 1
+ number 1201
+!
+ephone-dn 2
+ number 1202
+!
+ephone-dn 3
+ number 1203
+!
+ephone 1
+ device-security-mode none
+ mac-address 0004.9A6A.8DEC
+ type 7960
+ button 1:1
+!
+ephone 2
+ device-security-mode none
+ mac-address 0001.9618.62E2
+ type 7960
+ button 1:2
+!
+ephone 3
+ device-security-mode none
+ mac-address 0060.3EA7.84D5
+ type 7960
+ button 1:3
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login
+!
+!
+!
+end
+```
+
+#### SwitchA
+
+```
+Current configuration : 1326 bytes
+!
+version 15.0
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname SwitchA
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+interface FastEthernet0/1
+ switchport mode access
+ switchport voice vlan 1
+!
+interface FastEthernet0/2
+ switchport mode access
+ switchport voice vlan 1
+!
+interface FastEthernet0/3
+ switchport mode access
+ switchport voice vlan 1
+!
+interface FastEthernet0/4
+ switchport mode access
+ switchport voice vlan 1
+!
+interface FastEthernet0/5
+ switchport mode access
+ switchport voice vlan 1
+!
+interface FastEthernet0/6
+!
+interface FastEthernet0/7
+!
+interface FastEthernet0/8
+!
+interface FastEthernet0/9
+!
+interface FastEthernet0/10
+!
+interface FastEthernet0/11
+!
+interface FastEthernet0/12
+!
+interface FastEthernet0/13
+!
+interface FastEthernet0/14
+!
+interface FastEthernet0/15
+!
+interface FastEthernet0/16
+!
+interface FastEthernet0/17
+!
+interface FastEthernet0/18
+!
+interface FastEthernet0/19
+!
+interface FastEthernet0/20
+!
+interface FastEthernet0/21
+!
+interface FastEthernet0/22
+!
+interface FastEthernet0/23
+!
+interface FastEthernet0/24
+!
+interface GigabitEthernet0/1
+!
+interface GigabitEthernet0/2
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+!
+!
+!
+line con 0
+!
+line vty 0 4
+ login
+line vty 5 15
+ login
+!
+!
+!
+!
+end
+```
+
+#### SwitchB
+
+```
+Current configuration : 1326 bytes
+!
+version 15.0
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname SwitchB
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+interface FastEthernet0/1
+ switchport mode access
+ switchport voice vlan 1
+!
+interface FastEthernet0/2
+ switchport mode access
+ switchport voice vlan 1
+!
+interface FastEthernet0/3
+ switchport mode access
+ switchport voice vlan 1
+!
+interface FastEthernet0/4
+ switchport mode access
+ switchport voice vlan 1
+!
+interface FastEthernet0/5
+ switchport mode access
+ switchport voice vlan 1
+!
+interface FastEthernet0/6
+!
+interface FastEthernet0/7
+!
+interface FastEthernet0/8
+!
+interface FastEthernet0/9
+!
+interface FastEthernet0/10
+!
+interface FastEthernet0/11
+!
+interface FastEthernet0/12
+!
+interface FastEthernet0/13
+!
+interface FastEthernet0/14
+!
+interface FastEthernet0/15
+!
+interface FastEthernet0/16
+!
+interface FastEthernet0/17
+!
+interface FastEthernet0/18
+!
+interface FastEthernet0/19
+!
+interface FastEthernet0/20
+!
+interface FastEthernet0/21
+!
+interface FastEthernet0/22
+!
+interface FastEthernet0/23
+!
+interface FastEthernet0/24
+!
+interface GigabitEthernet0/1
+!
+interface GigabitEthernet0/2
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+!
+!
+!
+line con 0
+!
+line vty 0 4
+ login
+line vty 5 15
+ login
+!
+!
+!
+!
+end
+```
+
+#### Контрольные вопросы.
+
+1. Маршрутизируемые протоколы (Routed Protocols) - это наборы правил, которые определяют структуру пакетов данных и систему адресации, позволяя доставлять информацию от одного узла к другому через сеть.
+   
+Примеры: IPv4, IPv6, а также устаревшие IPX и AppleTalk.
+
+Протоколы маршрутизации (Routing Protocols) - это инструменты, с помощью которых маршрутизаторы обмениваются данными о доступных сетях, строят таблицы маршрутизации и выбирают наилучший путь для передачи трафика.
+
+Примеры: RIP, OSPF, EIGRP, BGP.
+
+3. Протокол RIP является дистанционно-векторным протоколом, использующим метрику «количество переходов» (hop count).
+
+Для предотвращения петель маршрутизации используются следующие механизмы:
+
+- Split Horizon: запрещает маршрутизатору отправлять информацию о маршруте через тот же интерфейс, от которого эта информация была получена.
+  
+- Poisoned Reverse: маршрутизатор помечает вышедший из строя маршрут как недостижимый (метрика 16) и рассылает это обновление всем соседям.
+  
+- Hop-count limit: устанавливает максимальное расстояние до сети в 15 хопов; сеть на расстоянии 16 хопов считается недоступной, что разрывает бесконечные циклы.
+
+В сравнении с IGRP, RIP ограничен 15 хопами и учитывает только расстояние, тогда как IGRP (проприетарный протокол Cisco) использует сложную метрику (пропускная способность, задержка) и поддерживает до 255 хопов.
+
+3. Настройка DHCP на маршрутизаторе Cisco:
+
+- Исключение адресов, которые не должны выдаваться клиентам: ip dhcp excluded-address [start_ip] [end_ip].
+  
+- Создание пула адресов: ip dhcp pool [name].
+  
+- Указание подсети: network [network_address] [mask].
+  
+- Настройка шлюза по умолчанию: default-router [ip_address].
+  
+- Настройка DNS-сервера (опционально): dns-server [ip_address]
+
+4. Последовательное соединение между маршрутизаторами используется для организации WAN-каналов. Один конец кабеля (DCE) должен задавать синхронизацию (команда clock rate), а другой (DTE) — подстраиваться под неё. Передача данных осуществляется побитово (последовательно) с использованием протоколов канального уровня, таких как HDLC (по умолчанию для Cisco) или PPP.
+
+5. В реальных сетях скорости зависят от стандартов линий связи (например, T1 — 1.544 Мбит/с, E1 — 2.048 Мбит/с). В Cisco Packet Tracer при настройке параметра clock rate доступны значения от 1200 бит/с до 4 000 000 бит/с (4 Мбит/с) и выше, в зависимости от модели интерфейса.
+
+6. Для обеспечения качественной передачи голоса (QoS) и работы одного голосового потока с использованием кодека G.711 (без сжатия) требуется полоса пропускания около 80-90 Кбит/с (с учетом заголовков IP/UDP/RTP). При использовании сжимающих кодеков (например, G.729) минимальная планка может опускаться до 24-30 Кбит/с.
+
+7. Выход из IP-сети в телефонную сеть общего пользования (PSTN) осуществляется через специальный голосовой шлюз (Voice Gateway). Шлюз преобразует пакеты IP-телефонии (протоколы SIP или SCCP) в аналоговые или цифровые сигналы телефонии. На маршрутизаторе настраиваются соответствующие dial-peer, указывающие направление вызова на внешние линии.
+
+8. Для присвоения номера используется команда number [номер] внутри режима конфигурации конкретного телефонного канала.
+   
+Пример:
+
+- Router(config-telephony)# dn 1
+  
+- Router(config-ephone-dn)# number 1001
 
 ## Лабораторная работа №8. Построение сети IP-телефонии между удаленными маршрутизаторами
 
-тут будет лаба
+Собираем топологию сети по заданному примеру.
+
+
