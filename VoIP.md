@@ -125,3 +125,85 @@
 - option 150 ip 192.168.1.1
 
 ## Лабораторная работа №3. Настройка конфигурации Cisco CallManager Express на маршрутизаторе Cisco 2811
+
+Согласно указанному рисунку, собираем топологию сети.
+
+<img width="734" height="330" alt="image" src="https://github.com/user-attachments/assets/25fc7325-ef8e-4b70-8d3c-b5855e47de33" />
+
+*Топология сети*
+
+Изменяем имя маршрутизатора на CMERouter. Отключаем синтаксис ввода слов от DNS-серверов.
+
+<img width="479" height="91" alt="image" src="https://github.com/user-attachments/assets/cd0b4f36-8896-436d-8f84-e7e4da07e606" />
+
+*Смена имени устройства и отключение синтаксиса ввода слов от DNS-серверов*
+
+Задаем пароли для защиты маршрутизатора как в удаленном режиме, так и в режиме консоли.
+
+<img width="322" height="140" alt="image" src="https://github.com/user-attachments/assets/a8efba1b-07ea-4c23-a13d-6830c8f0bf60" />
+
+*Задача паролей для удаленного и консольного режимов*
+
+Настраиваем интерфейс fa0/0 маршрутизатора CMERouter: настраиваем IP-адрес интерфейса и поднимаем его.
+
+<img width="610" height="143" alt="image" src="https://github.com/user-attachments/assets/e2f788c8-2f26-4828-9082-b8dc5dc115cd" />
+
+*Настройка интерфейса fa0/0*
+
+Для автоматической настройки компьютера и IP-телефонов в сети надо настроить DHCP сервер на маршрутизаторе Cisco 2811. В конфигурационном режиме создаем пул DHCP адреса с названием VOICE. Задаем сеть, в которой будет работать DHCP-сервер и указываем IP-адрес VLAN для передачи данных.
+
+<img width="284" height="20" alt="image" src="https://github.com/user-attachments/assets/24617d38-c42b-4123-89b0-85fb81ba9043" />
+
+*Создание пула DHCP*
+
+<img width="450" height="17" alt="image" src="https://github.com/user-attachments/assets/fe5b234a-d31f-4df0-b0d8-ad882545a413" />
+
+*Задача сети, в которой будет работать DHCP-сервер*
+
+<img width="378" height="22" alt="image" src="https://github.com/user-attachments/assets/f0dd777b-9a26-412a-b31e-5bb406b3247c" />
+
+*Указание IP-адреса VLAN для передачи данных*
+
+При настройке DHCP для передачи голоса необходимо включить опцию 150. Эта опция нужна для того чтобы IP-телефоны использовали настройки CallManager Express с TFTP сервера.
+
+<img width="368" height="25" alt="image" src="https://github.com/user-attachments/assets/8660da30-ae47-4741-ab0b-164ce639b538" />
+
+*Включение опции 150*
+
+После проделанных настроек необходимо заняться настройкой CallManager Express, то есть телефонного сервиса в автоматическом режиме. В данном режиме ведётся диалоговый обмен сообщениями, маршрутизатор только запрашивает необходимые параметры. Включаем данный сервис.
+
+<img width="295" height="21" alt="image" src="https://github.com/user-attachments/assets/0794033a-da09-4d40-bc95-07a4a2bc2c91" />
+
+*Включение телефонного сервиса*
+
+Задаем максимальное количество IP-телефонов.
+
+<img width="321" height="18" alt="image" src="https://github.com/user-attachments/assets/673eba5b-92d2-4dc6-a598-47e804880656" />
+
+*Задача максимального количества IP-телефонов*
+
+Задаем IP-адрес голосового шлюза. 
+
+<img width="502" height="22" alt="image" src="https://github.com/user-attachments/assets/01f64fd2-c149-4c6b-a491-537b7c764d29" />
+
+*Задача IP-адреса голосового шлюза*
+
+Настраиваем автоматическое назначение внешних номеров.
+
+<img width="353" height="34" alt="image" src="https://github.com/user-attachments/assets/2a67fa40-eb91-4b3b-aa71-b1ff08c5bc9a" />
+
+*Настройка автоматического назначения внешних номеров*
+
+Настраиваем интерфейс управления коммутатором в сети VLAN через назначение диапазона портов.
+
+<img width="382" height="49" alt="image" src="https://github.com/user-attachments/assets/5b42e9ad-acc4-4716-93b6-659846a5bcb2" />
+
+*Настройка интерфейса управления коммутатором*
+
+Для возможности дальнейшего общения необходима дополнительная конфигурация. Для этого создаём первую логическую «телефонную» линию (directory number).
+
+<img width="326" height="139" alt="image" src="https://github.com/user-attachments/assets/0d7af8ff-b433-4360-b6a0-f8ba6c4c7924" />
+
+*Телефонная линия*
+
+После подключения телефона в порт коммутатора Cisco 3560, нажимаем кнопки **# на IP-телефонах, это разблокирует кнопки настроек.
