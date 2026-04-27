@@ -2,7 +2,7 @@
 
 ## Лабораторная работа №2. Базовая настройка IP-телефонов в среде Cisco Packet Tracer
 
-Цель работы: изучить построение сети IP-телефонии с помощью маршрутизатора, коммутатора и IP телефонов Cisco 7960 в среде Packet tracer.
+Цель работы: изучить построение сети IP-телефонии с помощью маршрутизатора, коммутатора и IP телефонов Cisco 7960 в среде Packet Tracer.
 
 Собираем топологию сети.
 
@@ -521,6 +521,75 @@ end
 
 Согласно указанному рисунку, собираем топологию сети.
 
+<img width="1031" height="551" alt="image" src="https://github.com/user-attachments/assets/83de18b0-2925-46f2-a2c3-7c222b9c9688" />
+
+*Топология сети*
+
+На свитче создаем VLAN и присваиваем им имена.
+
+<img width="402" height="133" alt="image" src="https://github.com/user-attachments/assets/2455c820-10b5-41f5-98d9-bb628dc77ba9" />
+
+*Создание VLAN на коммутаторе и присвоение им имен*
+
+Настраиваем VLAN 99.
+
+<img width="583" height="138" alt="image" src="https://github.com/user-attachments/assets/7e6f1c3f-e937-4211-a0c3-6749f38f55e4" />
+
+*Настройка VLAN 99*
+
+Задаем маршрут по умолчанию.
+
+<img width="392" height="61" alt="image" src="https://github.com/user-attachments/assets/f3bc0886-815e-4921-be6c-7a67fc1a317d" />
+
+*Настройка маршрута по умолчанию*
+
+Настраиваем интерфейс управления коммутатором в сети VLAN через назначение диапазона портов.
+
+<img width="399" height="72" alt="image" src="https://github.com/user-attachments/assets/bd69747a-2c2d-4417-b75a-b4a026f2081d" />
+
+*Настройка интерфейса управления коммутатором в сети VLAN*
+
+Переходим к настрйокам на маршрутизаторе.
+
+Включаем интерфейс fa0/0.
+
+<img width="625" height="129" alt="image" src="https://github.com/user-attachments/assets/58182dbd-b62c-4f2e-a49a-828fbd1d559b" />
+
+*Включение интерфейса fa0/0 на роутере*
+
+Создаем логические подынтерфейсы для VLAN 10, VLAN 20 и VLAN 99.
+
+<img width="653" height="361" alt="image" src="https://github.com/user-attachments/assets/61f1ad4a-7dd0-4315-8d7b-1119afa0c2ef" />
+
+*Создание и настройка логических подынтерфейсов для VLAN 10, VLAN 20, VLAN 99*
+
+Исключаем из пула адрес интерфейса маршрутизатора и DNS-сервера.
+
+<img width="498" height="34" alt="image" src="https://github.com/user-attachments/assets/c8791c5f-1a1c-4a93-9451-9ef34b380d15" />
+
+*Исключение адресов из пула*
+
+Настраиваем DHCP-сервера для передачи голоса и данных на маршрутизаторе.
+
+<img width="505" height="116" alt="image" src="https://github.com/user-attachments/assets/98cbc738-060f-499f-8cf4-bdf0bc7fbdc5" />
+
+*Настройка DHCP-серверов*
+
+Настраиваем телефонный сервис в автоматическом режиме.
+
+<img width="490" height="71" alt="image" src="https://github.com/user-attachments/assets/0b426b12-0f1d-4de6-b0c6-18ba5cebdd81" />
+
+*Настройка телефонного сервиса*
+
+Присваиваем номера для всех IP-телефонов в сети.
+
+<img width="638" height="234" alt="image" src="https://github.com/user-attachments/assets/d98bd393-e205-4f8a-acfc-d1e7cac885d2" />
+
+*Присвоение номеров для IP-телефонов*
+
+<img width="358" height="204" alt="image" src="https://github.com/user-attachments/assets/2c8014db-8fbb-4f9f-a168-abdf55b2b562" />
+
+*Настройка IP-телефонов*
 
 
 ## Лабораторная работа №7. Построение сети IP-телефонии между удаленными маршрутизаторами в среде Cisco Packet Tracer
