@@ -1,4 +1,4 @@
-## [Configure LAN](pkt_lan/ConfigLAN.pkt)
+# [Configure LAN](pkt_lan/ConfigLAN.pkt)
 
 ## Часть 1.
 
