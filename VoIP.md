@@ -1720,4 +1720,46 @@ end
 
 Собираем топологию сети по заданному примеру.
 
+*Топология сети*
 
+Присваиваем имена устройствам.
+
+<img width="462" height="53" alt="image" src="https://github.com/user-attachments/assets/b9414f96-d4b6-4297-9b43-4daf071f1fad" />
+
+*Присваивание имени CMERouter*
+
+<img width="478" height="53" alt="image" src="https://github.com/user-attachments/assets/9c74eb67-59d9-4dd8-a677-49e4ff1a756c" />
+
+*Присваивание имени RemoteRouter*
+
+<img width="435" height="46" alt="image" src="https://github.com/user-attachments/assets/4169c7d8-247f-40c1-ae8c-930c364ed155" />
+
+*Присваивание имени CMESwitch*
+
+<img width="499" height="71" alt="image" src="https://github.com/user-attachments/assets/1dd626f7-f9e7-450f-820f-79fb7caf6769" />
+
+*Присваивание имени RemoteSwitch*
+
+Настраиваем интерфейс S0/3/0 на CMERouter: задаем IP-адрес, маску подсети и скорость передачи.
+
+<img width="457" height="60" alt="image" src="https://github.com/user-attachments/assets/e69dfa58-1a58-4b58-b646-cbdc688123fa" />
+
+*Настройка s0/3/0 на CMERouter*
+
+Настроим маршрутизацию по протоколу EIGRP.
+
+<img width="328" height="63" alt="image" src="https://github.com/user-attachments/assets/1e016e37-dda4-47b8-8a65-e5f4ce7ec2e6" />
+
+*Настройка маршрутизации по протоколу EIGRP на CMERouter*
+
+Настраиваем интерфейс S0/3/0 на RemoteRouter: задаем IP-адрес, маску подсети и скорость передачи.
+
+<img width="446" height="110" alt="image" src="https://github.com/user-attachments/assets/fb53ab21-00cd-46bf-a27c-ca766569428b" />
+
+*Настройка s0/3/0 на RemoteRouter*
+
+Проверяем соединение между маршрутизаторами ping-запросом с RemoteRouter на CMERouter.
+
+<img width="532" height="118" alt="image" src="https://github.com/user-attachments/assets/7ddd12c2-0772-4e6a-8327-9011e0c1f743" />
+
+*ping с RemoteRouter на CMERouter*
