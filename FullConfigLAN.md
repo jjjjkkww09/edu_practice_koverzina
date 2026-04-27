@@ -1,6 +1,4 @@
-### .pkt файл с выполненной работой находится в /pkt_lan.
-
-## Configure LAN
+## [Configure LAN](pkt_lan/ConfigLAN.pkt)
 
 ## Часть 1.
 
