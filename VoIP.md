@@ -206,24 +206,281 @@
 
 *Телефонная линия*
 
-После подключения телефона в порт коммутатора Cisco 3560, нажимаем кнопки **# на IP-телефонах, это разблокирует кнопки настроек.
+Проверяем: звонок с первого IP-телефона на второй.
 
-*картинка*
+<img width="1429" height="693" alt="image" src="https://github.com/user-attachments/assets/40f8f678-e388-476c-bd08-cd9f7bf08616" />
 
-Нажимаем кнопку «Settings» и набираем цифру 3. Далее заходим в Network Configuration и в строке 33 нажимаем Erase Configuration, это удалит конфигурацию.
+*Входящий вызов с первого IP-телефона на второй*
 
-*картинка*
+<img width="1415" height="702" alt="image" src="https://github.com/user-attachments/assets/033d4d11-d593-419c-aa0f-409180cf5bba" />
 
-Нажимаем кнопку "Save" и перезагружаем IP-телефон.
+*Принятый вызов с первого IP-телефона на второй*
 
-*картинка*
+Теперь сделаем звонок с третьего IP-телефона на первый.
 
-После настройки всех устройств, проверим правильность конфигурации. В привилегированном режиме вводим "show running-configuration".
+<img width="1460" height="687" alt="image" src="https://github.com/user-attachments/assets/07948f7e-243a-4df7-8b8d-5989808c3e08" />
 
-*вывод*
+*Входящий вызов с третьего IP-телефона на первый*
 
-Проверяем: звонки.
+<img width="1440" height="683" alt="image" src="https://github.com/user-attachments/assets/a9266256-aa62-40e6-880e-e96594e633fc" />
 
+*Принятый вызов с третьего IP-телефона на первый*
+
+#### Полные конфигурации устройств
+
+#### CMERouter
+
+```
+Current configuration : 1310 bytes
+!
+version 15.1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname CMERouter
+!
+!
+!
+!
+!
+ip dhcp pool VOICE
+ network 192.168.10.0 255.255.255.0
+ default-router 192.168.10.1
+ option 150 ip 192.168.10.1
+!
+!
+!
+ip cef
+no ipv6 cef
+!
+!
+!
+!
+license udi pid CISCO2811/K9 sn FTX10174C1E-
+!
+!
+!
+!
+!
+!
+!
+!
+!
+no ip domain-lookup
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface FastEthernet0/0
+ ip address 192.168.10.1 255.255.255.0
+ duplex auto
+ speed auto
+!
+interface FastEthernet0/1
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+!
+!
+telephony-service
+ max-ephones 5
+ max-dn 5
+ ip source-address 192.168.10.1 port 2000
+ auto assign 4 to 6
+ auto assign 1 to 5
+!
+ephone-dn 1
+ number 54001
+!
+ephone-dn 2
+ number 54002
+!
+ephone-dn 3
+ number 54003
+!
+ephone 1
+ device-security-mode none
+ mac-address 00E0.8FE8.B530
+ type 7960
+ button 1:1
+!
+ephone 2
+ device-security-mode none
+ mac-address 0002.16C6.72A8
+ type 7960
+ button 1:3
+!
+ephone 3
+ device-security-mode none
+ mac-address 000D.BD29.C269
+ type 7960
+ button 1:2
+!
+line con 0
+ password cisco
+ logging synchronous
+ login
+!
+line aux 0
+!
+line vty 0 4
+ password cisco
+ logging synchronous
+ login
+!
+!
+!
+end
+```
+#### SwitchA
+
+```
+Current configuration : 1391 bytes
+!
+version 12.2(37)SE1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname Switch
+!
+!
+!
+!
+!
+!
+mls qos
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface FastEthernet0/1
+ switchport mode access
+ switchport voice vlan 1
+!
+interface FastEthernet0/2
+ switchport mode access
+ switchport voice vlan 1
+!
+interface FastEthernet0/3
+ switchport mode access
+ switchport voice vlan 1
+!
+interface FastEthernet0/4
+ switchport mode access
+ switchport voice vlan 1
+!
+interface FastEthernet0/5
+ switchport mode access
+ switchport voice vlan 1
+!
+interface FastEthernet0/6
+!
+interface FastEthernet0/7
+!
+interface FastEthernet0/8
+!
+interface FastEthernet0/9
+!
+interface FastEthernet0/10
+!
+interface FastEthernet0/11
+!
+interface FastEthernet0/12
+!
+interface FastEthernet0/13
+!
+interface FastEthernet0/14
+!
+interface FastEthernet0/15
+!
+interface FastEthernet0/16
+!
+interface FastEthernet0/17
+!
+interface FastEthernet0/18
+!
+interface FastEthernet0/19
+!
+interface FastEthernet0/20
+!
+interface FastEthernet0/21
+!
+interface FastEthernet0/22
+!
+interface FastEthernet0/23
+!
+interface FastEthernet0/24
+!
+interface GigabitEthernet0/1
+!
+interface GigabitEthernet0/2
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+!
+!
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login
+!
+!
+!
+!
+end
+```
 #### Контрольные вопросы
 
 1. SIP (Session Initiation Protocol) - протокол для установки связи? используется для настройки IP-телефонов через сервер Generic Server.
@@ -259,3 +516,17 @@
 - default-router 192.168.1.1
   
 - option 150 ip 192.168.1.1
+
+## Лабораторная работа №4. Конфигурация VOIP в среде Cisco Packet Tracer
+
+Согласно указанному рисунку, собираем топологию сети.
+
+
+
+## Лабораторная работа №7. Построение сети IP-телефонии между удаленными маршрутизаторами в среде Cisco Packet Tracer
+
+тут будет лаба
+
+## Лабораторная работа №8. Построение сети IP-телефонии между удаленными маршрутизаторами
+
+тут будет лаба
