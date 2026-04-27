@@ -1,6 +1,6 @@
-<img width="292" height="27" alt="image" src="https://github.com/user-attachments/assets/181bbbcb-3b33-4403-9987-5f2148dfd47b" />### .pkt файлы с выполненными лабораторными работами находятся в /pkt_voip.
+### .pkt файлы с выполненными лабораторными работами находятся в /pkt_voip.
 
-## Лабораторная работа №2. Базовая настройка IP-телефонов в среде Cisco Packet Tracer
+# Лабораторная работа №2. Базовая настройка IP-телефонов в среде Cisco Packet Tracer
 
 Цель работы: изучить построение сети IP-телефонии с помощью маршрутизатора, коммутатора и IP телефонов Cisco 7960 в среде Packet Tracer.
 
@@ -1720,6 +1720,8 @@ end
 
 Собираем топологию сети по заданному примеру.
 
+<img width="1119" height="651" alt="image" src="https://github.com/user-attachments/assets/86fe470e-376e-4e0e-8c92-48c1790fd83e" />
+
 *Топология сети*
 
 Присваиваем имена устройствам.
@@ -1778,7 +1780,7 @@ end
 
 Отключаем синтаксис ввода слов от DNS серверов.
 
-<img width="292" height="27" alt="image" src="https://github.com/user-attachments/assets/c03c1d7f-54eb-45c4-838d-daec8418335f" />
+<img width="292" height="27" alt="image" src="https://github.com/user-attachments/assets/181bbbcb-3b33-4403-9987-5f2148dfd47b" />
 
 *Отключение синтаксиса ввода слов от DNS серверов на RemoteSwitch*
 
