@@ -1763,3 +1763,7 @@ end
 <img width="532" height="118" alt="image" src="https://github.com/user-attachments/assets/7ddd12c2-0772-4e6a-8327-9011e0c1f743" />
 
 *ping с RemoteRouter на CMERouter*
+
+Создаем подынтерфейсы для VLAN передачи голоса и данных: VLAN 40 - для данных, VLAN 30 - для голоса, а также закрепляем для них IP-адреса.
+
+*Настройка подынтерфейсов для VLAN передачи голоса и данных на RemoteRouter*
