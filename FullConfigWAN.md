@@ -1,6 +1,4 @@
-### .pkt файл с выполненной работой находится в /pkt_wan.
-
-## Configure WAN
+# [Configure WAN](pkt_wan/ConfigWAN.pkt)
 
 ## Часть 1.
 
