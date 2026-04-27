@@ -1,4 +1,4 @@
-### .pkt файлы с выполненными лабораторными работами находятся в /pkt_voip.
+<img width="292" height="27" alt="image" src="https://github.com/user-attachments/assets/181bbbcb-3b33-4403-9987-5f2148dfd47b" />### .pkt файлы с выполненными лабораторными работами находятся в /pkt_voip.
 
 ## Лабораторная работа №2. Базовая настройка IP-телефонов в среде Cisco Packet Tracer
 
@@ -1770,4 +1770,62 @@ end
 
 Настроим маршрутизацию по протоколу EIGRP.
 
-*Настройка маршрутизации по 
+<img width="611" height="113" alt="image" src="https://github.com/user-attachments/assets/90bd1248-a1d6-42e4-8587-7c69756fb74d" />
+
+*Настройка маршрутизации по протоколу EIGRP на RemoteRouter*
+
+Настроим коммутатор RemoteSwitch.
+
+Отключаем синтаксис ввода слов от DNS серверов.
+
+<img width="292" height="27" alt="image" src="https://github.com/user-attachments/assets/c03c1d7f-54eb-45c4-838d-daec8418335f" />
+
+*Отключение синтаксиса ввода слов от DNS серверов на RemoteSwitch*
+
+Необходимо задать пароли для защиты коммутатора как в удаленном режиме, так и в режиме консоли.
+
+<img width="336" height="133" alt="image" src="https://github.com/user-attachments/assets/4b5ee96c-dc41-4511-8c7e-96aa7fc01347" />
+
+*Задаем пароли для защиты RemoteSwitch в удаленном и консольном режимах*
+
+Настраиваем первый порт коммутатора в транковый режим.
+
+<img width="582" height="167" alt="image" src="https://github.com/user-attachments/assets/a2c0f007-d801-485c-bc5c-c671c91ce873" />
+
+*Настройка f0/1 на RemoteSwitch в транковый режим*
+
+Настраиваем интерфейсы коммутатора CMESwitch в соответствии с VLAN.
+
+<img width="431" height="71" alt="image" src="https://github.com/user-attachments/assets/06a6895d-f053-4ab5-b75d-04433d599b76" />
+
+*Настройка интерфейсов CMESwitch*
+
+Проверка.
+
+#### Полная конфигурация устройств
+
+#### CMERouter
+
+```
+
+```
+
+#### CMESwitch
+
+```
+
+```
+
+#### RemoteRouter
+
+```
+
+```
+
+#### RemoteSwitch
+
+```
+
+```
+
+#### Контрольные вопросы.
