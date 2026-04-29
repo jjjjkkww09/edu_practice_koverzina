@@ -270,6 +270,6 @@
 
 *Написанный скрипт*
 
-<img width="648" height="146" alt="изображение" src="https://github.com/user-attachments/assets/6d88ef47-c0b8-4500-a643-bfecfe7be393" />
+<img width="411" height="125" alt="изображение" src="https://github.com/user-attachments/assets/c3fcdfa6-e91e-4aaa-a3c5-2e4a8565ce57" />
 
 *Выдача прав и вывод скрипта*
