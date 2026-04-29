@@ -123,3 +123,161 @@
 *Вывод whoami под пользователем username4*
 
 # Практическая № 2. Начало использования команд
+
+1. Вызовем мануал, не указывая никаких параметров и/или опций.
+
+<img width="320" height="51" alt="image" src="https://github.com/user-attachments/assets/9a9348dc-46cf-4f53-9eb6-3127db3e5131" />
+
+*Вызов мануала*
+
+2. Посмотрим мануал по мануалу, использовав команду man man.
+
+<img width="1323" height="808" alt="image" src="https://github.com/user-attachments/assets/51e3a316-4489-410b-b7e8-49edab6b7503" />
+
+*Просмотр мануала по мануалу*
+
+3. Вызовем мануал по команде ls.
+
+<img width="1282" height="800" alt="image" src="https://github.com/user-attachments/assets/f5b6adb0-37fd-4fdf-8fff-5ccd0bca904e" />
+
+*Просмотр мануала по ls*
+
+4. Попробуем посмотреть мануал по несуществующей команде.
+
+<img width="359" height="50" alt="image" src="https://github.com/user-attachments/assets/0e09b6cc-0e7e-4661-b83e-8de831d418a7" />
+
+5. Проверим наше положение на данный момент с разными флагами.
+
+<img width="299" height="203" alt="image" src="https://github.com/user-attachments/assets/952cd345-fcba-4a78-8e02-e0543002b006" />
+
+*Выводы pwd с разными флагами*
+
+6. Просмотрим историю использования команд.
+
+<img width="549" height="511" alt="image" src="https://github.com/user-attachments/assets/7c1c0faf-19e6-4086-aba9-bb2da459f123" />
+
+*История использования команд*
+
+7. В домашнем каталоге /student/home создамим структуру папок по заданному шаблону.
+
+<img width="566" height="197" alt="image" src="https://github.com/user-attachments/assets/940e869a-dfaf-463b-a7f1-ab44705d5f0c" />
+
+*Создание структуры папок*
+
+8. Создаем файлы с указанными названиями и содержимым, используя не предустановленный редактор.
+
+Для выполнения я использую mcedit.
+
+<img width="445" height="62" alt="image" src="https://github.com/user-attachments/assets/70477a18-8a40-454e-8f94-08c55c76fab4" />
+
+*Установка mc*
+
+Сначала создаем greetings.txt. Он находится по пути /home/student/text_files/greetings/.
+
+<img width="572" height="60" alt="image" src="https://github.com/user-attachments/assets/6ff3f85f-dbb6-40fc-863b-d77a81583b55" />
+
+*Переход в нужную директорию и создание файла, переход в редактор*
+
+<img width="1274" height="802" alt="image" src="https://github.com/user-attachments/assets/c8735ec4-e423-419c-904e-2a0bf80e037d" />
+
+*Написание содержимого*
+
+<img width="676" height="106" alt="image" src="https://github.com/user-attachments/assets/3db17921-f5b4-420f-b24f-d80f78efbb80" />
+
+*Подтверждаем сохранение файла*
+
+Создадим файл numbers.txt, находящийся по пути /home/student/text_files/data/.
+
+<img width="475" height="46" alt="image" src="https://github.com/user-attachments/assets/59a5c2ab-7e91-4d7a-a6bd-7eac4617ca3a" />
+
+*Переход в нужную директорию и создание файла, переход в редактор*
+
+<img width="704" height="148" alt="image" src="https://github.com/user-attachments/assets/97ff8da7-dd83-44f2-8e2b-4d24e1dc8385" />
+
+*Написание содержимого*
+
+<img width="540" height="105" alt="image" src="https://github.com/user-attachments/assets/27831cab-34ec-4eda-99b6-58b6a38a3ef3" />
+
+*Подтверждаем сохранение файла*
+
+Создадим файл colours.txt. Он, так же как и numbers.txt, находится по пути /home/student/text_files/data/.
+
+<img width="456" height="38" alt="image" src="https://github.com/user-attachments/assets/4ff041ce-d6f2-4448-97a3-0e1f45eedd88" />
+
+*Создание файла и переход в редактор*
+
+<img width="706" height="110" alt="image" src="https://github.com/user-attachments/assets/ccbe02d6-2d29-4d36-8db1-0f2e73635237" />
+
+*Написание содержимого*
+
+Создаем файл shopping.txt, находящийся по пути /home/student/text_files/shopping_list.
+
+<img width="573" height="110" alt="image" src="https://github.com/user-attachments/assets/35abb10d-f229-4145-ac4b-886fa2b16edb" />
+
+*Переход в нужную директорию и создание файла, переход в редактор*
+
+<img width="758" height="121" alt="image" src="https://github.com/user-attachments/assets/5b9d0cd9-ef88-4afe-95ad-7ceab2af528a" />
+
+*Написание содержимого*
+
+По тому же пути, то есть /home/student/text_files/shopping_list, создадим файл todo.txt.
+
+<img width="498" height="41" alt="image" src="https://github.com/user-attachments/assets/43605d77-a4b2-4541-8830-85d6eb3e93e2" />
+
+*Создание файла и переход в редактор*
+
+<img width="745" height="115" alt="image" src="https://github.com/user-attachments/assets/6ad5d1ca-9dbf-4c93-bc0d-338a2c1e7492" />
+
+*Написание содержимого*
+
+Создадим файл poem.txt по пути /home/student/text_files/literature/.
+
+<img width="493" height="47" alt="image" src="https://github.com/user-attachments/assets/497e85ca-a53f-47e6-b1b4-fd7d5719981d" />
+
+*Переход в нужную директорию и создание файла, переход в редактор*
+
+<img width="705" height="106" alt="image" src="https://github.com/user-attachments/assets/d6fab212-78a7-46b2-9757-0f883a5c5d59" />
+
+*Написание содержимого*
+
+Создаем файл zeroInfo.txt по пути /home/student/text_files/empty_lines/.
+
+<img width="764" height="160" alt="image" src="https://github.com/user-attachments/assets/270a884a-a7d4-4cae-bb8d-35f732e729c5" />
+
+*Написание содержимого*
+
+Создаем файл space.txt по тому же пути, где находится и zeroInfo.txt, то есть /home/student/text_files/empty_lines/.
+
+<img width="591" height="47" alt="image" src="https://github.com/user-attachments/assets/1c72089b-0cfc-4b88-bfaf-07339cef38ca" />
+
+*Создание файла и переход в редактор*
+
+<img width="859" height="192" alt="image" src="https://github.com/user-attachments/assets/97410434-3ebf-49ab-b358-493ec637c8e1" />
+
+*Написание содержимого*
+
+9. Выведем содержимое файла zeroInfo.txt сначала без флага, потом с флагом -n, а после с флагом -b.
+
+<img width="663" height="306" alt="image" src="https://github.com/user-attachments/assets/7c67893d-69de-433c-9084-c49316a2b688" />
+
+*Вывод содержимого zeroInfo.txt без флага; с флагом -n; с флагом -b*
+
+Разница состоит в том, что cat без флага выводит просто содержимое файла; cat-n нумерует все выводимые строки без исключения (включая абсолютно пустые), а cat -b Ннмерует только непустые строки. Если в файле есть полностью пустая строка (только символ переноса), она останется без номера.
+
+10. Выводим содержимое файла zeroInfo.txt с флагом -s.
+
+<img width="562" height="62" alt="image" src="https://github.com/user-attachments/assets/a4adf6aa-17d8-4a2c-9577-a0d87097b89a" />
+
+*Вывод содержимого zeroInfo с флагом -s*
+
+Выводится просто одна строчка пустоты без нумерации. Это происходит по причине того, что команда cat -s предназначена для того, чтобы «сжимать» идущие подряд пустые строки в одну.
+
+11. Выводим файл space.txt c флагом -E. Этот флаг добавляет символ $ в конце каждой строки.
+
+<img width="574" height="89" alt="image" src="https://github.com/user-attachments/assets/f5e91ff3-37af-4cd0-a83f-199de831b340" />
+
+*Вывод содержимого space.txt с флагом -E*
+
+12. Выведем файл shopping.txt с флагом -T, чтобы посмотреть отображение табуляций.
+
+<img width="588" height="83" alt="image" src="https://github.com/user-attachments/assets/b2d2e0a6-1c39-4e96-b961-e01e7dc95b10" />
