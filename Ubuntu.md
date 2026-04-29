@@ -49,3 +49,6 @@ D# Практическая № 1. Создание виртуальной ма�
 <img width="1245" height="786" alt="image" src="https://github.com/user-attachments/assets/9727e36b-bc61-4c59-af5e-982986bf33ef" />
 
 <img width="1245" height="786" alt="image" src="https://github.com/user-attachments/assets/5c10bf6c-7d25-4ba3-8839-297b84774e8a" />
+
+<img width="1245" height="785" alt="image" src="https://github.com/user-attachments/assets/9ac56a17-7c0a-437e-b635-1bdc0f215212" />
+
