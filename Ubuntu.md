@@ -30,8 +30,22 @@ D# Практическая № 1. Создание виртуальной ма�
 
 <img width="806" height="611" alt="image" src="https://github.com/user-attachments/assets/bd54f1ea-f8d8-4996-a8ce-c7ae7deadf46" />
 
-Выбираем английский язык.
+Выбираем русский язык.
 
-<img width="1256" height="584" alt="image" src="https://github.com/user-attachments/assets/49f7338e-f160-4611-b1e5-2ab094978e26" />
+<img width="1262" height="597" alt="image" src="https://github.com/user-attachments/assets/cd9d1eca-f13e-4fdf-9e9e-997e57737085" />
 
 *Выбор языка*
+
+Выбираем тип установки.
+
+<img width="1277" height="779" alt="image" src="https://github.com/user-attachments/assets/1035a1f5-d150-42d4-8e77-be7a331e2569" />
+
+ну чето чето
+
+<img width="1269" height="789" alt="image" src="https://github.com/user-attachments/assets/fd19ae64-edc5-4daa-b422-04a9506c401e" />
+
+<img width="1262" height="760" alt="image" src="https://github.com/user-attachments/assets/27529679-593b-49c5-87ea-fc4421382c55" />
+
+<img width="1245" height="786" alt="image" src="https://github.com/user-attachments/assets/9727e36b-bc61-4c59-af5e-982986bf33ef" />
+
+<img width="1245" height="786" alt="image" src="https://github.com/user-attachments/assets/5c10bf6c-7d25-4ba3-8839-297b84774e8a" />
