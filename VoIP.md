@@ -1880,7 +1880,13 @@ end
 
 *Настройка на RemoteRouter*
 
+Проверка.
 
+Проверяем выданные адреса и номера.
+
+<img width="649" height="477" alt="image" src="https://github.com/user-attachments/assets/1e460ec8-56b5-4428-998d-70bb84c6be59" />
+
+*IP-телефон, подключенный к удаленному узлу*
 ### Полная конфигурация устройств
 
 #### CMERouter
