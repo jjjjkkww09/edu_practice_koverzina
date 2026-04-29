@@ -1,4 +1,4 @@
-D# Практическая № 1. Создание виртуальной машины
+# Практическая № 1. Создание виртуальной машины
 
 Заходим в VMware Workstation и нажимаем "Создать новую виртуальную машину"
 
@@ -52,3 +52,74 @@ D# Практическая № 1. Создание виртуальной ма�
 
 <img width="1245" height="785" alt="image" src="https://github.com/user-attachments/assets/9ac56a17-7c0a-437e-b635-1bdc0f215212" />
 
+ПОБЕДА
+
+<img width="1912" height="1031" alt="image" src="https://github.com/user-attachments/assets/47d3b9f6-8c06-46f9-ab47-f9e51cb9527f" />
+
+1. Создаем пользователя: логин - своя фамилия, пароль - 0000.
+
+<img width="433" height="94" alt="image" src="https://github.com/user-attachments/assets/876fa934-4778-4a80-9e0f-a52dcc8ff840" />
+
+2. Создаем пользователя по номеру ПК, за которым работаем.
+
+<img width="503" height="101" alt="image" src="https://github.com/user-attachments/assets/8baca9e4-1bf6-40a3-9a23-0336f5bec09b" />
+
+3. Создаем пользователей username1, username2, username3, username4, каждый с паролем 1234.
+
+<img width="508" height="338" alt="image" src="https://github.com/user-attachments/assets/bd0a94c0-b678-4ca4-a954-69eda6683185" />
+
+4. Проверяем созданных пользователей.
+
+<img width="732" height="651" alt="image" src="https://github.com/user-attachments/assets/5ef8aadf-4216-4150-a629-486faf31223b" />
+
+5. Входим под каждым пользователем.
+
+<img width="647" height="232" alt="image" src="https://github.com/user-attachments/assets/f55af2a3-8536-4c53-8a90-85cb5c150c41" />
+
+*Вход под пользователем Koverzina*
+
+<img width="107" height="54" alt="image" src="https://github.com/user-attachments/assets/fadd88a7-29cb-4d2b-b97c-a9a607ab66ef" />
+
+*Вывод whoami под пользователем Koverzina*
+
+<img width="603" height="266" alt="image" src="https://github.com/user-attachments/assets/054cc515-2c0c-4ee2-8e56-1fe853eb8b59" />
+
+*Вход под пользователем user9*
+
+<img width="96" height="55" alt="image" src="https://github.com/user-attachments/assets/803454d6-a809-449a-8ba3-8e24081eed94" />
+
+*Вывод whoami под пользователем user9*
+
+<img width="674" height="246" alt="image" src="https://github.com/user-attachments/assets/cf31b420-f97c-4dcc-9db0-b1a53a802ef6" />
+
+*Вход под пользователем username1*
+
+<img width="100" height="58" alt="image" src="https://github.com/user-attachments/assets/7533e3c9-d3e1-48eb-9d25-c544fc3a8dee" />
+
+*Вывод whoami под пользователем username1*
+
+<img width="658" height="233" alt="image" src="https://github.com/user-attachments/assets/a0e36569-46d5-42e6-a7dc-7e7fa9a9fd91" />
+
+*Вход под пользователем username2*
+
+<img width="95" height="46" alt="image" src="https://github.com/user-attachments/assets/90f05817-8627-4ffe-8afd-1349cc7e5830" />
+
+*Вывод whoami под пользователем username2*
+
+<img width="639" height="233" alt="image" src="https://github.com/user-attachments/assets/e20ba3f5-2045-4761-b62f-5a2e8fb60fda" />
+
+*Вход под пользователем username3*
+
+<img width="95" height="50" alt="image" src="https://github.com/user-attachments/assets/057d948d-d242-49b7-b0b8-f4f0277aaca9" />
+
+*Вывод whoami под пользователем username3*
+
+<img width="666" height="231" alt="image" src="https://github.com/user-attachments/assets/542ce0d4-ca76-4e2e-ab8b-67a95255703f" />
+
+*Вход под пользователем username4*
+
+<img width="105" height="57" alt="image" src="https://github.com/user-attachments/assets/f3524fa6-7b11-44bb-bd44-a574c138a1a4" />
+
+*Вывод whoami под пользователем username4*
+
+# Практическая № 2. Начало использования команд
