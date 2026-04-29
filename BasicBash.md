@@ -86,4 +86,26 @@
 
 Пишем скрипт, который принимает имя директории в качестве аргумента и создает директорию с этим именем. Если директория уже существует, скрипт должен вывести сообщение об этом.
 
+<img width="252" height="49" alt="изображение" src="https://github.com/user-attachments/assets/5cba487e-6bed-4d8d-ab6d-6afcb8e54251" />
 
+*Создание файла и переход в редактор*
+
+<img width="424" height="297" alt="изображение" src="https://github.com/user-attachments/assets/304a2532-3ba6-4b43-ac7a-8633697aba1b" />
+
+*Написанный скрипт*
+
+<img width="405" height="153" alt="изображение" src="https://github.com/user-attachments/assets/744f46d3-5282-4135-a86d-057031420cc7" />
+
+*Выдача прав и вывод скрипта*
+
+## [user_light.sh](bashscripts/user_light.sh) 
+
+Пишем скрипт, который ищет пользователя в passwd и, в случае нахождения, выводит сообщение с поздравлением.
+
+<img width="302" height="33" alt="изображение" src="https://github.com/user-attachments/assets/295781fa-65e8-4e32-863b-e3dcc107900f" />
+
+*Создание файла и переход в редактор*]
+
+![Uploading изображение.png…]()
+
+*Написанный скрипт*
