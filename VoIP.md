@@ -1804,9 +1804,82 @@ end
 
 *Настройка интерфейсов CMESwitch*
 
-Проверка.
+Настраиваем на CMERouter интерфейс fa0/0.
 
-( #### доделать работу )
+<img width="459" height="59" alt="image" src="https://github.com/user-attachments/assets/2b0b346e-327d-45f2-92ed-b8aadfa5bc41" />
+
+*Настройка f0/0 на CMERouter*
+
+Настраиваем на RemoteRouter интерфейс g0/0.
+
+<img width="453" height="64" alt="image" src="https://github.com/user-attachments/assets/084ea33d-349b-45ad-b01e-4a98e1137cbc" />
+
+*Настройка g0/0 на RemoteRouter*
+
+Для автоматической настройки компьютеров и IP-телефонов в сети надо настроить DHCP сервер на маршрутизаторах. Создаем пул DHCP адресов. После задаем сеть, в которой будет работать сам DHCP-сервер. Указываем IP-адрес нужного VLAN для передачи данных и включаем опцию 150.
+
+<img width="470" height="73" alt="image" src="https://github.com/user-attachments/assets/9dee72dd-0ad4-49ee-a6ac-cb98023e4bd6" />
+
+*Создание и настройка пула DHCP-адресов на CMERouter*
+
+<img width="494" height="83" alt="image" src="https://github.com/user-attachments/assets/f611b014-7dd2-4efe-bd33-f8a4c197501a" />
+
+*Создание и настройка пула DHCP-адресов на RemoteRouter*
+
+Настроим динамическую маршрутизацию на основе протокола RIP второй версии для передачи информации между маршрутизаторами в сети.
+
+<img width="369" height="68" alt="image" src="https://github.com/user-attachments/assets/c619aa45-241a-4721-a84f-f9afd567cd6c" />
+
+*Настройка RIPv2 на CMERouter*
+
+<img width="379" height="65" alt="image" src="https://github.com/user-attachments/assets/e6c0ffd0-5ee4-4054-b64b-ee7e04126ce9" />
+
+*Настройка RIPv2 на RemoteRouter*
+
+Включаем и настраиваем телефонный сервис в автоматическом режиме. Здесь задаем максимальное количество номеров, присваиваемых IP-телефоном, максимальное количество IP-телефонов и IP-адрес голосового шлюза.
+
+Также настраиваем автоматическое назначение внешних номеров.
+
+<img width="531" height="92" alt="image" src="https://github.com/user-attachments/assets/e2eeb706-6d61-4337-9e52-187a01683471" />
+
+*Настройка на CMERouter*
+
+Для возможности включения и настройки телефонного сервиса на роутере 2911, нужно в конфигурационном режиме активировать лицензию Unified Communications командой *license boot module c2900 technology-package uck9*. После этого можем провести аналогичную настройку.
+
+<img width="511" height="99" alt="image" src="https://github.com/user-attachments/assets/20d43df0-2b59-4ddf-8e90-9e59f1327249" />
+
+*Настройка на RemoteRouter*
+
+Назначаем диапазоны портов на коммутаторах.
+
+<img width="395" height="56" alt="image" src="https://github.com/user-attachments/assets/a6360e4e-6b38-4cd8-bb3e-83d291dd9dad" />
+
+*Настройка на CMESwitch*
+
+<img width="440" height="54" alt="image" src="https://github.com/user-attachments/assets/eccea913-137c-4ace-94a0-7b21d5508033" />
+
+*Настройка на RemoteSwitch*
+
+Создаем логическую "телефонную линию" для дальнейшего общения между устройствами.
+
+<img width="628" height="141" alt="image" src="https://github.com/user-attachments/assets/c5685a8b-13b1-4b7f-9a04-4c8e7bf0a649" />
+
+*Настройка IP-телефонов на CMERouter*
+
+<img width="644" height="72" alt="image" src="https://github.com/user-attachments/assets/b731b307-02f0-49af-8418-ea644fb2eed5" />
+
+*Настройка IP-телефона на RemoteRouter*
+
+Настраиваем dial-peer на маршрутизаторах.
+
+<img width="434" height="50" alt="image" src="https://github.com/user-attachments/assets/fc83c57a-b9c8-4a58-984e-cf3bedbff404" />
+
+*Настройка на CMERouter*
+
+<img width="424" height="43" alt="image" src="https://github.com/user-attachments/assets/e9e534fb-da0e-4889-9be8-337c8f52e1b1" />
+
+*Настройка на RemoteRouter*
+
 
 ### Полная конфигурация устройств
 
