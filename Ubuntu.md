@@ -231,10 +231,6 @@
 
 *Написание содержимого*
 
-<img width="676" height="106" alt="image" src="https://github.com/user-attachments/assets/3db17921-f5b4-420f-b24f-d80f78efbb80" />
-
-*Подтверждаем сохранение файла*
-
 Создадим файл numbers.txt, находящийся по пути /home/student/text_files/data/.
 
 <img width="475" height="46" alt="image" src="https://github.com/user-attachments/assets/59a5c2ab-7e91-4d7a-a6bd-7eac4617ca3a" />
@@ -244,10 +240,6 @@
 <img width="704" height="148" alt="image" src="https://github.com/user-attachments/assets/97ff8da7-dd83-44f2-8e2b-4d24e1dc8385" />
 
 *Написание содержимого*
-
-<img width="540" height="105" alt="image" src="https://github.com/user-attachments/assets/27831cab-34ec-4eda-99b6-58b6a38a3ef3" />
-
-*Подтверждаем сохранение файла*
 
 Создадим файл colours.txt. Он, так же как и numbers.txt, находится по пути /home/student/text_files/data/.
 
