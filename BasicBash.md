@@ -116,6 +116,7 @@
 
 ## [8. user_f.sh](bashscripts/user_f.sh) 
 
-![Uploading изображение.png…]()
 
 *Создание файла и переход в редактор*
+
+![Uploading изображение.png…]()
