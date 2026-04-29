@@ -1,4 +1,4 @@
-# Практическая № 1. Создание виртуальной машины
+D# Практическая № 1. Создание виртуальной машины
 
 Заходим в VMware Workstation и нажимаем "Создать новую виртуальную машину"
 
@@ -29,3 +29,9 @@
 <img width="261" height="106" alt="image" src="https://github.com/user-attachments/assets/5f403dc6-c216-420d-9ad7-a5aed07a02a0" />
 
 <img width="806" height="611" alt="image" src="https://github.com/user-attachments/assets/bd54f1ea-f8d8-4996-a8ce-c7ae7deadf46" />
+
+Выбираем английский язык.
+
+<img width="1256" height="584" alt="image" src="https://github.com/user-attachments/assets/49f7338e-f160-4611-b1e5-2ab094978e26" />
+
+*Выбор языка*
