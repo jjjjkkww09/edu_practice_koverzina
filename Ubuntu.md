@@ -1,6 +1,6 @@
 # Практическая № 1. Создание виртуальной машины
 
-Заходим в VMware Workstation и нажимаем "Создать новую виртуальную машину"
+Чтобы создать виртуальную машину, мы будем использовать VMware Workstation Pro 12.
 
 <img width="812" height="271" alt="image" src="https://github.com/user-attachments/assets/2561831f-6de0-401c-ab32-828f79ccd080" />
 
@@ -12,67 +12,112 @@
 
 <img width="512" height="393" alt="image" src="https://github.com/user-attachments/assets/f23b5bec-0fb7-4132-80b6-4ddca4792096" />
 
+*Выбор установочного диска/образа ОС*
+
 <img width="492" height="385" alt="image" src="https://github.com/user-attachments/assets/783c7d14-0a95-4a5c-94ff-478184f18f1a" />
+
+*Выбор установки ОС*
 
 <img width="492" height="391" alt="image" src="https://github.com/user-attachments/assets/2dcd1ab6-48b1-4a1e-8437-e4c857949c23" />
 
+*Назначение имени ВМ*
+
 <img width="498" height="390" alt="image" src="https://github.com/user-attachments/assets/8a124b02-311a-436b-a7c0-1e9009c6cb4e" />
+
+*Указание размера диска*
+
+После всех выборов и настроек проверяем все на завершительном этапе. Если все хорошо, жмем "Готово".
 
 <img width="489" height="387" alt="image" src="https://github.com/user-attachments/assets/9782cde7-bacf-4025-bfbe-c84b3cc21d3c" />
 
-Виртуальная машина создана.
+*Завершение создания ВМ*
 
 <img width="1908" height="1041" alt="image" src="https://github.com/user-attachments/assets/9cecdce0-5b1b-4ca4-8c57-67a5a5023e6a" />
 
-Выберем установочный диск ОС.
+Виртуальная машина создана.
+
+Выберем установочный диск ОС. Для этого переходим в изменение настроек параметров виртуальной машины и ищем пункт CD/DVD (SATA). Выбираем файл образа ISO нашей операционной системы.
 
 <img width="261" height="106" alt="image" src="https://github.com/user-attachments/assets/5f403dc6-c216-420d-9ad7-a5aed07a02a0" />
 
+*Переход в изменение настроек*
+
 <img width="806" height="611" alt="image" src="https://github.com/user-attachments/assets/bd54f1ea-f8d8-4996-a8ce-c7ae7deadf46" />
 
-Выбираем русский язык.
+*Выбор файла образа ISO*
+
+После всех настроек запускаем. Начинается запуск Ubuntu.
+
+Система предложит выбрать нам язык. Выбираем русский язык.
 
 <img width="1262" height="597" alt="image" src="https://github.com/user-attachments/assets/cd9d1eca-f13e-4fdf-9e9e-997e57737085" />
 
 *Выбор языка*
 
-Выбираем тип установки.
+Выбираем тип установки Ubuntu Server.
 
 <img width="1277" height="779" alt="image" src="https://github.com/user-attachments/assets/1035a1f5-d150-42d4-8e77-be7a331e2569" />
 
-ну чето чето
+*Выбор типа установки*
+
+Система покажет сконфигурированный сетевой интерфейс, нажимаем готово.
 
 <img width="1269" height="789" alt="image" src="https://github.com/user-attachments/assets/fd19ae64-edc5-4daa-b422-04a9506c401e" />
 
+*Сетевой интерфейс*
+
+Дальше будет конфигурация зеркал для Ubuntu. Ждем, пока все закончится, потом жмем готово.
+
 <img width="1262" height="760" alt="image" src="https://github.com/user-attachments/assets/27529679-593b-49c5-87ea-fc4421382c55" />
+
+*Зеркала*
+
+Здесь система попросит сконфигурировать дисковое пространство - использовать весь диск или выбрать самому, шифровать диск или нет. Ничего не меняем, оставляя использование всего диска и жмем готово.
 
 <img width="1245" height="786" alt="image" src="https://github.com/user-attachments/assets/9727e36b-bc61-4c59-af5e-982986bf33ef" />
 
-<img width="1245" height="786" alt="image" src="https://github.com/user-attachments/assets/5c10bf6c-7d25-4ba3-8839-297b84774e8a" />
+*Дисковое пространство*
+
+Конфигурация профиля. Система запрашивает ввести свое имя, создать первого пользователя и его пароль, написать имя сервера. В каждое поле пишем student, сервер называем studentserver.
 
 <img width="1245" height="785" alt="image" src="https://github.com/user-attachments/assets/9ac56a17-7c0a-437e-b635-1bdc0f215212" />
 
-ПОБЕДА
+*Конфигурация профиля*
+
+После завершения всех настроек виртуальная машина попросит перезагрузиться. Делаем это, после перезагрузки уже попадаем в консоль самой машины, вводим логин и пароль созданного пользователя.
 
 <img width="1912" height="1031" alt="image" src="https://github.com/user-attachments/assets/47d3b9f6-8c06-46f9-ab47-f9e51cb9527f" />
+
+*Первый вход в консоль после установки*
+
+#### Выполнение заданий. 
 
 1. Создаем пользователя: логин - своя фамилия, пароль - 0000.
 
 <img width="433" height="94" alt="image" src="https://github.com/user-attachments/assets/876fa934-4778-4a80-9e0f-a52dcc8ff840" />
 
-2. Создаем пользователя по номеру ПК, за которым работаем.
+*Создание пользователя Koverzina с паролем 0000*
+
+2. Создаем пользователя по номеру ПК, за которым работаем. Пароль такой же, как и само имя пользователя.
 
 <img width="503" height="101" alt="image" src="https://github.com/user-attachments/assets/8baca9e4-1bf6-40a3-9a23-0336f5bec09b" />
 
+*Создание пользователя user9 с паролем user9
+*
 3. Создаем пользователей username1, username2, username3, username4, каждый с паролем 1234.
 
 <img width="508" height="338" alt="image" src="https://github.com/user-attachments/assets/bd0a94c0-b678-4ca4-a954-69eda6683185" />
+
+*Созднаие пользователей с паролем 1234*
 
 4. Проверяем созданных пользователей.
 
 <img width="732" height="651" alt="image" src="https://github.com/user-attachments/assets/5ef8aadf-4216-4150-a629-486faf31223b" />
 
-5. Входим под каждым пользователем.
+*Проверка пользователей*
+
+
+5. Входим под каждым пользователем, после чего выполняем команду whoami - она определяет текущего пользователя.
 
 <img width="647" height="232" alt="image" src="https://github.com/user-attachments/assets/f55af2a3-8536-4c53-8a90-85cb5c150c41" />
 
@@ -123,6 +168,9 @@
 *Вывод whoami под пользователем username4*
 
 # Практическая № 2. Начало использования команд
+
+
+#### Выполнение заданий.
 
 1. Вызовем мануал, не указывая никаких параметров и/или опций.
 
