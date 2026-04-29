@@ -4,7 +4,11 @@
 
 <img width="812" height="271" alt="image" src="https://github.com/user-attachments/assets/2561831f-6de0-401c-ab32-828f79ccd080" />
 
+*Создание новой ВМ*
+
 <img width="502" height="390" alt="image" src="https://github.com/user-attachments/assets/d572064c-2016-486c-bb29-c6a394997cc9" />
+
+*Мастер создания ВМ*
 
 <img width="512" height="393" alt="image" src="https://github.com/user-attachments/assets/f23b5bec-0fb7-4132-80b6-4ddca4792096" />
 
@@ -24,3 +28,4 @@
 
 <img width="261" height="106" alt="image" src="https://github.com/user-attachments/assets/5f403dc6-c216-420d-9ad7-a5aed07a02a0" />
 
+<img width="806" height="611" alt="image" src="https://github.com/user-attachments/assets/bd54f1ea-f8d8-4996-a8ce-c7ae7deadf46" />
