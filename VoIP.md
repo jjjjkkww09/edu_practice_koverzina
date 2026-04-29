@@ -1852,11 +1852,11 @@ end
 
 Назначаем диапазоны портов на коммутаторах.
 
-<img width="395" height="56" alt="image" src="https://github.com/user-attachments/assets/a6360e4e-6b38-4cd8-bb3e-83d291dd9dad" />
+<img width="395" height="56" alt="image" src="https://github.com/user-attachments/assets/d5b55214-65df-4fa9-8bde-17eac001f04f" />
 
 *Настройка на CMESwitch*
 
-<img width="440" height="54" alt="image" src="https://github.com/user-attachments/assets/eccea913-137c-4ace-94a0-7b21d5508033" />
+<img width="372" height="46" alt="image" src="https://github.com/user-attachments/assets/d076abc2-2e0e-4c17-8ba9-e738b85cfc98" />
 
 *Настройка на RemoteSwitch*
 
