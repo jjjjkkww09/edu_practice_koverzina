@@ -1,5 +1,7 @@
 Собираем топологию сети по заданной схеме.
 
+<img width="1541" height="966" alt="image" src="https://github.com/user-attachments/assets/6e960e3a-7234-40fa-a4c5-0549ad1cc54b" />
+
 *Топология сети*
 
 Сразу переименуем все устройства.
@@ -133,5 +135,25 @@
 <img width="633" height="138" alt="image" src="https://github.com/user-attachments/assets/cc84a81b-3324-4a3c-9d7e-f2b372720b16" />
 
 *Настройка номера для IP-телефона и dial-peer на RemoteRouter*
+
+Проверка.
+
+Каждому IP-телефону был выдан IP-адрес и номер.
+
+<img width="2103" height="702" alt="image" src="https://github.com/user-attachments/assets/1062e9a0-8ad8-46b3-af12-f18d00f7aa6e" />
+
+*GUI IP-телефонов с выданными номерами*
+
+Позвоним с телефона CME-IP Phone 1 на CME-IP Phone 2.
+
+<img width="1395" height="698" alt="image" src="https://github.com/user-attachments/assets/3cb02127-3ec6-42ab-8f84-6c5e61310fec" />
+
+*Звонок между  CME-IP Phone 1 и CME-IP Phone 2*
+
+Позвоним с телефона CME-IP Phone 1 на удаленный телефон REMOTE-IP Phone 1.
+
+<img width="1397" height="704" alt="image" src="https://github.com/user-attachments/assets/e60b4c84-56b5-4bf2-97da-be87c203e9c9" />
+
+*Звонок между  CME-IP Phone 1 и REMOTE-IP Phone 1*
 
 
