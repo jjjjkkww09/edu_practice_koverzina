@@ -1728,197 +1728,688 @@ end
 
 Цель работы: изучить построение сети IP-телефонии между удаленными филиалами с помощью маршрутизаторов Cisco 2811 и Cisco 2600XM.
 
-Собираем топологию сети по заданному примеру.
+Собираем топологию сети по заданной схеме.
 
-<img width="1119" height="651" alt="image" src="https://github.com/user-attachments/assets/86fe470e-376e-4e0e-8c92-48c1790fd83e" />
+<img width="1541" height="966" alt="image" src="https://github.com/user-attachments/assets/6e960e3a-7234-40fa-a4c5-0549ad1cc54b" />
 
 *Топология сети*
 
-Присваиваем имена устройствам.
+Сразу переименуем все устройства.
 
-<img width="462" height="53" alt="image" src="https://github.com/user-attachments/assets/b9414f96-d4b6-4297-9b43-4daf071f1fad" />
+<img width="425" height="69" alt="image" src="https://github.com/user-attachments/assets/78cf268f-26e1-40e4-8d3d-fd70852b1563" />
 
-*Присваивание имени CMERouter*
+*CMERouter*
 
-<img width="478" height="53" alt="image" src="https://github.com/user-attachments/assets/9c74eb67-59d9-4dd8-a677-49e4ff1a756c" />
+<img width="519" height="78" alt="image" src="https://github.com/user-attachments/assets/9339bd14-a95f-40f6-8c08-6968b6e0bdc2" />
 
-*Присваивание имени RemoteRouter*
+*CMESwitch*
 
-<img width="435" height="46" alt="image" src="https://github.com/user-attachments/assets/4169c7d8-247f-40c1-ae8c-930c364ed155" />
+<img width="437" height="72" alt="image" src="https://github.com/user-attachments/assets/f4e37fb2-250c-42dd-88ae-71738d245c99" />
 
-*Присваивание имени CMESwitch*
+*RemoteRouter*
 
-<img width="499" height="71" alt="image" src="https://github.com/user-attachments/assets/1dd626f7-f9e7-450f-820f-79fb7caf6769" />
+<img width="479" height="68" alt="image" src="https://github.com/user-attachments/assets/a615855b-2369-4d69-9e7f-c8ac0beac304" />
 
-*Присваивание имени RemoteSwitch*
+*RemoteSwitch*
 
-Настраиваем интерфейс S0/3/0 на CMERouter: задаем IP-адрес, маску подсети и скорость передачи.
+Настраиваем порт Serial 0/3/0 на CMERouter.
 
-<img width="457" height="60" alt="image" src="https://github.com/user-attachments/assets/e69dfa58-1a58-4b58-b646-cbdc688123fa" />
+<img width="403" height="79" alt="image" src="https://github.com/user-attachments/assets/ce4be4c0-0080-4ebd-a995-54e542562450" />
 
 *Настройка s0/3/0 на CMERouter*
 
-Настроим маршрутизацию по протоколу EIGRP.
+Настроим EIGRP на устройстве CMERouter.
 
-<img width="328" height="63" alt="image" src="https://github.com/user-attachments/assets/1e016e37-dda4-47b8-8a65-e5f4ce7ec2e6" />
+<img width="346" height="66" alt="image" src="https://github.com/user-attachments/assets/4d0c59dc-2b91-4a3a-9c89-9d98d084eb92" />
 
-*Настройка маршрутизации по протоколу EIGRP на CMERouter*
+*Настройка EIGRP на CMERouter*
 
-Настраиваем интерфейс S0/3/0 на RemoteRouter: задаем IP-адрес, маску подсети и скорость передачи.
+Перейдем к настройке удаленного роутера. Настроим на RemoteRouter интерфейс Serial 0/3/0.
 
-<img width="446" height="110" alt="image" src="https://github.com/user-attachments/assets/fb53ab21-00cd-46bf-a27c-ca766569428b" />
+<img width="470" height="94" alt="image" src="https://github.com/user-attachments/assets/69409919-658c-44c0-b748-79a58ba0456b" />
 
 *Настройка s0/3/0 на RemoteRouter*
 
-Проверяем соединение между маршрутизаторами ping-запросом с RemoteRouter на CMERouter.
+Проверим соединение между маршрутизаторами. Для этого на RemoteRouter выполним команду ping на интерфейс Serial 0/3/0 маршрутизатора CMERouter.
 
-<img width="532" height="118" alt="image" src="https://github.com/user-attachments/assets/7ddd12c2-0772-4e6a-8327-9011e0c1f743" />
+<img width="562" height="118" alt="image" src="https://github.com/user-attachments/assets/d4778b37-7b31-4495-a81b-21859a89795a" />
 
-*ping с RemoteRouter на CMERouter*
+*Выполнение ping с RemoteRouter на CMERouter*
 
-Создаем подынтерфейсы для VLAN передачи голоса и данных: VLAN 40 - для данных, VLAN 30 - для голоса, а также закрепляем для них IP-адреса.
+Создадим подинтерфейсы для VLAN'ов передачи голоса и данных - VLAN 40 для данных и VLAN 30 для голоса. Закрепим за ними IP-адреса.
 
-*Настройка подынтерфейсов для VLAN передачи голоса и данных на RemoteRouter*
+<img width="431" height="102" alt="image" src="https://github.com/user-attachments/assets/cf4bdb94-4e09-4090-be71-e0bf3974073a" />
 
-Настроим маршрутизацию по протоколу EIGRP.
+*Конфигурация подинтерфейсов VLAN на RemoteRouter*
 
-<img width="611" height="113" alt="image" src="https://github.com/user-attachments/assets/90bd1248-a1d6-42e4-8587-7c69756fb74d" />
+Аналогично создадим подинтерфейсы на маршрутизаторе CMERouter.
 
-*Настройка маршрутизации по протоколу EIGRP на RemoteRouter*
+<img width="636" height="186" alt="image" src="https://github.com/user-attachments/assets/60ae7065-60a3-414d-9e4a-e1a5d60b5563" />
 
-Настроим коммутатор RemoteSwitch.
+*Конфигурация подинтерфейсов VLAN на CMERouter*
 
-Отключаем синтаксис ввода слов от DNS серверов.
+Так же, как и на маршрутизаторе CMERouter, настроим маршрутацию по протоколу EIGRP для RemoteRouter.
 
-<img width="292" height="27" alt="image" src="https://github.com/user-attachments/assets/181bbbcb-3b33-4403-9987-5f2148dfd47b" />
+<img width="638" height="114" alt="image" src="https://github.com/user-attachments/assets/8c2d9158-ebbc-41e0-a4d5-cf4859f3fb22" />
 
-*Отключение синтаксиса ввода слов от DNS серверов на RemoteSwitch*
+*Настройка EIGRP на RemoteRouter*
 
-Необходимо задать пароли для защиты коммутатора как в удаленном режиме, так и в режиме консоли.
+Продолжим настройку удаленного узла. Настроим коммутатор RemoteSwitch - здесь мы отключим синтаксис ввода слов от DNS-серверов и зададим пароли для защиты устройства в консольном и удаленном режимах.
 
-<img width="336" height="133" alt="image" src="https://github.com/user-attachments/assets/4b5ee96c-dc41-4511-8c7e-96aa7fc01347" />
+<img width="331" height="151" alt="image" src="https://github.com/user-attachments/assets/b0522541-0f91-450f-ad97-93426dd86c30" />
 
-*Задаем пароли для защиты RemoteSwitch в удаленном и консольном режимах*
+*Настройка RemoteSwitch*
 
-Настраиваем первый порт коммутатора в транковый режим.
+Настроим первый порт этого коммутатора, переведя его в транковый режим.
 
-<img width="582" height="167" alt="image" src="https://github.com/user-attachments/assets/a2c0f007-d801-485c-bc5c-c671c91ce873" />
+<img width="651" height="244" alt="image" src="https://github.com/user-attachments/assets/bd589d1b-bd8f-493d-95d2-9535c7974703" />
 
-*Настройка f0/1 на RemoteSwitch в транковый режим*
+*Настройка f0/1 на RemoteSwitch*
 
-Настраиваем интерфейсы коммутатора CMESwitch в соответствии с VLAN.
+Здесь же создадим VLAN'ы и присвоим им имена.
 
-<img width="431" height="71" alt="image" src="https://github.com/user-attachments/assets/06a6895d-f053-4ab5-b75d-04433d599b76" />
+<img width="285" height="82" alt="image" src="https://github.com/user-attachments/assets/50006b2d-5da3-453a-b905-60edb16318e4" />
 
-*Настройка интерфейсов CMESwitch*
+*Создание VLAN на RemoteSwitch*
 
-Настраиваем на CMERouter интерфейс fa0/0.
+Настроим порт коммутатора в соотвествии с этими VLAN'ами.
 
-<img width="459" height="59" alt="image" src="https://github.com/user-attachments/assets/2b0b346e-327d-45f2-92ed-b8aadfa5bc41" />
+<img width="534" height="158" alt="image" src="https://github.com/user-attachments/assets/2df52aa7-3bb1-4f3b-a38a-cd5dd6a36209" />
 
-*Настройка f0/0 на CMERouter*
+*Настройка VLAN на RemoteSwitch*
 
-Настраиваем на RemoteRouter интерфейс g0/0.
+Перейдем к настройке CMESwitch. Здесь мы проведем аналогичную настройку.
 
-<img width="453" height="64" alt="image" src="https://github.com/user-attachments/assets/084ea33d-349b-45ad-b01e-4a98e1137cbc" />
+<img width="621" height="226" alt="image" src="https://github.com/user-attachments/assets/f6db1313-6e5f-4b06-b174-4ce2d5159c61" />
 
-*Настройка g0/0 на RemoteRouter*
+*Настройка f0/1 на CMESwitch*
 
-Для автоматической настройки компьютеров и IP-телефонов в сети надо настроить DHCP сервер на маршрутизаторах. Создаем пул DHCP адресов. После задаем сеть, в которой будет работать сам DHCP-сервер. Указываем IP-адрес нужного VLAN для передачи данных и включаем опцию 150.
+<img width="550" height="341" alt="image" src="https://github.com/user-attachments/assets/ef331335-3693-4a57-9d2e-f10a42852260" />
 
-<img width="470" height="73" alt="image" src="https://github.com/user-attachments/assets/9dee72dd-0ad4-49ee-a6ac-cb98023e4bd6" />
+*Настройка VLAN на CMESwitch*
 
-*Создание и настройка пула DHCP-адресов на CMERouter*
+Вернемся к настройке маршрутизатора CMERouter. Сначала настроим DHCP.
 
-<img width="494" height="83" alt="image" src="https://github.com/user-attachments/assets/f611b014-7dd2-4efe-bd33-f8a4c197501a" />
+<img width="451" height="156" alt="image" src="https://github.com/user-attachments/assets/a6a8bcdb-1da3-4c93-ae82-12e119f18739" />
 
-*Создание и настройка пула DHCP-адресов на RemoteRouter*
+*Настройка DHCP на CMERouter*
 
-Настроим динамическую маршрутизацию на основе протокола RIP второй версии для передачи информации между маршрутизаторами в сети.
+Здесь же настроим телефонный сервис.
 
-<img width="369" height="68" alt="image" src="https://github.com/user-attachments/assets/c619aa45-241a-4721-a84f-f9afd567cd6c" />
+<img width="453" height="76" alt="image" src="https://github.com/user-attachments/assets/43ba37f1-d12c-4346-86fc-7d64e9ed3ba2" />
 
-*Настройка RIPv2 на CMERouter*
+*Настройка телефонного сервиса на CMERouter*
 
-<img width="379" height="65" alt="image" src="https://github.com/user-attachments/assets/e6c0ffd0-5ee4-4054-b64b-ee7e04126ce9" />
+Настроим IP-телефонам номера.
 
-*Настройка RIPv2 на RemoteRouter*
+<img width="635" height="166" alt="image" src="https://github.com/user-attachments/assets/9bc89af1-24ed-487b-aeda-c666d7c70017" />
 
-Включаем и настраиваем телефонный сервис в автоматическом режиме. Здесь задаем максимальное количество номеров, присваиваемых IP-телефоном, максимальное количество IP-телефонов и IP-адрес голосового шлюза.
+*Настройка номеров для IP-телефонов на CMERouter*
 
-Также настраиваем автоматическое назначение внешних номеров.
+Настроим dial-peer.
 
-<img width="531" height="92" alt="image" src="https://github.com/user-attachments/assets/e2eeb706-6d61-4337-9e52-187a01683471" />
+<img width="458" height="63" alt="image" src="https://github.com/user-attachments/assets/004f030e-0fc4-41ee-b168-5d8090c28ebd" />
 
-*Настройка на CMERouter*
+*Настройка dial-peer на CMERouter*
 
-Для возможности включения и настройки телефонного сервиса на роутере 2911, нужно в конфигурационном режиме активировать лицензию Unified Communications командой *license boot module c2900 technology-package uck9*. После этого можем провести аналогичную настройку.
+На маршрутизаторе RemoteRouter проведем аналогичные настройки.
 
-<img width="511" height="99" alt="image" src="https://github.com/user-attachments/assets/20d43df0-2b59-4ddf-8e90-9e59f1327249" />
+<img width="454" height="154" alt="image" src="https://github.com/user-attachments/assets/64a9a4d6-63fc-4d04-987f-dc4031f26a9c" />
 
-*Настройка на RemoteRouter*
+*Настройка DHCP на RemoteRouter*
 
-Назначаем диапазоны портов на коммутаторах.
+<img width="481" height="78" alt="image" src="https://github.com/user-attachments/assets/5ee81bc6-fd1d-4918-ba89-57a36dcbb575" />
 
-<img width="395" height="56" alt="image" src="https://github.com/user-attachments/assets/d5b55214-65df-4fa9-8bde-17eac001f04f" />
+*Настройка телефонного сервиса на RemoteRouter*
 
-*Настройка на CMESwitch*
+<img width="633" height="138" alt="image" src="https://github.com/user-attachments/assets/cc84a81b-3324-4a3c-9d7e-f2b372720b16" />
 
-<img width="372" height="46" alt="image" src="https://github.com/user-attachments/assets/d076abc2-2e0e-4c17-8ba9-e738b85cfc98" />
-
-*Настройка на RemoteSwitch*
-
-Создаем логическую "телефонную линию" для дальнейшего общения между устройствами.
-
-<img width="628" height="141" alt="image" src="https://github.com/user-attachments/assets/c5685a8b-13b1-4b7f-9a04-4c8e7bf0a649" />
-
-*Настройка IP-телефонов на CMERouter*
-
-<img width="644" height="72" alt="image" src="https://github.com/user-attachments/assets/b731b307-02f0-49af-8418-ea644fb2eed5" />
-
-*Настройка IP-телефона на RemoteRouter*
-
-Настраиваем dial-peer на маршрутизаторах.
-
-<img width="434" height="50" alt="image" src="https://github.com/user-attachments/assets/fc83c57a-b9c8-4a58-984e-cf3bedbff404" />
-
-*Настройка на CMERouter*
-
-<img width="424" height="43" alt="image" src="https://github.com/user-attachments/assets/e9e534fb-da0e-4889-9be8-337c8f52e1b1" />
-
-*Настройка на RemoteRouter*
+*Настройка номера для IP-телефона и dial-peer на RemoteRouter*
 
 Проверка.
 
-Проверяем выданные адреса и номера.
+Каждому IP-телефону был выдан IP-адрес и номер.
 
-<img width="649" height="477" alt="image" src="https://github.com/user-attachments/assets/1e460ec8-56b5-4428-998d-70bb84c6be59" />
+<img width="2103" height="702" alt="image" src="https://github.com/user-attachments/assets/1062e9a0-8ad8-46b3-af12-f18d00f7aa6e" />
 
-*IP-телефон, подключенный к удаленному узлу*
+*GUI IP-телефонов с выданными номерами*
+
+Позвоним с телефона CME-IP Phone 1 на CME-IP Phone 2.
+
+<img width="1395" height="698" alt="image" src="https://github.com/user-attachments/assets/3cb02127-3ec6-42ab-8f84-6c5e61310fec" />
+
+*Звонок между  CME-IP Phone 1 и CME-IP Phone 2*
+
+Позвоним с телефона CME-IP Phone 1 на удаленный телефон REMOTE-IP Phone 1.
+
+<img width="1397" height="704" alt="image" src="https://github.com/user-attachments/assets/e60b4c84-56b5-4bf2-97da-be87c203e9c9" />
+
+*Звонок между  CME-IP Phone 1 и REMOTE-IP Phone 1*
+
 ### Полная конфигурация устройств
 
 #### CMERouter
 
 ```
-
+Current configuration : 1673 bytes
+!
+version 15.1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname CMERouter
+!
+!
+!
+!
+ip dhcp excluded-address 10.30.1.1
+ip dhcp excluded-address 10.40.1.1
+!
+ip dhcp pool VOICE
+ network 10.30.1.0 255.255.255.0
+ default-router 10.30.1.1
+ option 150 ip 10.30.1.1
+ip dhcp pool DATA
+ network 10.40.1.0 255.255.255.0
+ default-router 10.40.1.1
+!
+!
+!
+no ip cef
+no ipv6 cef
+!
+!
+!
+!
+license udi pid CISCO2811/K9 sn FTX1017KE4H-
+!
+!
+!
+!
+!
+!
+!
+!
+!
+no ip domain-lookup
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface FastEthernet0/0
+ no ip address
+ duplex auto
+ speed auto
+!
+interface FastEthernet0/0.1
+ encapsulation dot1Q 40
+ ip address 10.40.1.1 255.255.255.0
+!
+interface FastEthernet0/0.2
+ encapsulation dot1Q 30
+ ip address 10.30.1.1 255.255.255.0
+!
+interface FastEthernet0/1
+ no ip address
+ duplex auto
+ speed auto
+!
+interface Serial0/3/0
+ ip address 82.115.34.210 255.255.255.252
+ clock rate 2000000
+!
+interface Serial0/3/1
+ no ip address
+ clock rate 2000000
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+router eigrp 100
+ network 82.0.0.0
+ network 10.0.0.0
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+!
+!
+dial-peer voice 1 voip
+ destination-pattern 2...
+ session target ipv4:82.115.34.209
+!
+telephony-service
+ max-ephones 10
+ max-dn 10
+ ip source-address 10.30.1.1 port 2000
+ auto assign 1 to 10
+!
+ephone-dn 1
+ number 1001
+!
+ephone-dn 2
+ number 1002
+!
+ephone 1
+ device-security-mode none
+ mac-address 0060.2F17.B258
+ type 7960
+ button 1:1
+!
+ephone 2
+ device-security-mode none
+ mac-address 0001.43B1.4775
+ type 7960
+ button 1:2
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login
+!
+!
+!
+end
 ```
 
 #### CMESwitch
 
 ```
-
+Current configuration : 1378 bytes
+!
+version 12.2(37)SE1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname CMESwtich
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface FastEthernet0/1
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ spanning-tree portfast
+!
+interface FastEthernet0/2
+ switchport access vlan 40
+ switchport voice vlan 30
+ spanning-tree portfast
+!
+interface FastEthernet0/3
+ switchport access vlan 40
+ switchport voice vlan 30
+ spanning-tree portfast
+!
+interface FastEthernet0/4
+!
+interface FastEthernet0/5
+!
+interface FastEthernet0/6
+!
+interface FastEthernet0/7
+!
+interface FastEthernet0/8
+!
+interface FastEthernet0/9
+!
+interface FastEthernet0/10
+!
+interface FastEthernet0/11
+!
+interface FastEthernet0/12
+!
+interface FastEthernet0/13
+!
+interface FastEthernet0/14
+!
+interface FastEthernet0/15
+!
+interface FastEthernet0/16
+!
+interface FastEthernet0/17
+!
+interface FastEthernet0/18
+!
+interface FastEthernet0/19
+!
+interface FastEthernet0/20
+!
+interface FastEthernet0/21
+!
+interface FastEthernet0/22
+!
+interface FastEthernet0/23
+!
+interface FastEthernet0/24
+!
+interface GigabitEthernet0/1
+!
+interface GigabitEthernet0/2
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+!
+!
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login
+!
+!
+!
+!
+end
 ```
 
 #### RemoteRouter
 
 ```
-
+Current configuration : 1524 bytes
+!
+version 15.1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname RemoteRouter
+!
+!
+!
+!
+ip dhcp excluded-address 10.30.2.1
+ip dhcp excluded-address 10.40.2.1
+!
+ip dhcp pool R_VOICE
+ network 10.30.2.0 255.255.255.0
+ default-router 10.30.2.1
+ option 150 ip 10.30.2.1
+ip dhcp pool R_DATA
+ network 10.40.2.0 255.255.255.0
+ default-router 10.40.2.1
+!
+!
+!
+no ip cef
+no ipv6 cef
+!
+!
+!
+!
+license udi pid CISCO2811/K9 sn FTX1017TP0P-
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface FastEthernet0/0
+ no ip address
+ duplex auto
+ speed auto
+!
+interface FastEthernet0/0.1
+ encapsulation dot1Q 40
+ ip address 10.40.2.1 255.255.255.0
+!
+interface FastEthernet0/0.2
+ encapsulation dot1Q 30
+ ip address 10.30.2.1 255.255.255.0
+!
+interface FastEthernet0/1
+ no ip address
+ duplex auto
+ speed auto
+!
+interface Serial0/3/0
+ ip address 82.115.34.209 255.255.255.252
+!
+interface Serial0/3/1
+ no ip address
+ clock rate 2000000
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+router eigrp 100
+ network 10.0.0.0
+ network 82.0.0.0
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+!
+!
+dial-peer voice 1 voip
+ destination-pattern 1...
+ session target ipv4:82.115.34.210
+!
+telephony-service
+ max-ephones 10
+ max-dn 10
+ ip source-address 10.30.2.1 port 2000
+ auto assign 1 to 10
+!
+ephone-dn 1
+ number 2001
+!
+ephone 1
+ device-security-mode none
+ mac-address 0001.64E1.C16D
+ type 7960
+ button 1:1
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login
+!
+!
+!
+end
 ```
 
 #### RemoteSwitch
 
 ```
-
+Current configuration : 1405 bytes
+!
+version 12.2(37)SE1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname RemoteSwitch
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+no ip domain-lookup
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface FastEthernet0/1
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ spanning-tree portfast
+!
+interface FastEthernet0/2
+ switchport access vlan 40
+ switchport voice vlan 30
+ spanning-tree portfast
+!
+interface FastEthernet0/3
+!
+interface FastEthernet0/4
+!
+interface FastEthernet0/5
+!
+interface FastEthernet0/6
+!
+interface FastEthernet0/7
+!
+interface FastEthernet0/8
+!
+interface FastEthernet0/9
+!
+interface FastEthernet0/10
+!
+interface FastEthernet0/11
+!
+interface FastEthernet0/12
+!
+interface FastEthernet0/13
+!
+interface FastEthernet0/14
+!
+interface FastEthernet0/15
+!
+interface FastEthernet0/16
+!
+interface FastEthernet0/17
+!
+interface FastEthernet0/18
+!
+interface FastEthernet0/19
+!
+interface FastEthernet0/20
+!
+interface FastEthernet0/21
+!
+interface FastEthernet0/22
+!
+interface FastEthernet0/23
+!
+interface FastEthernet0/24
+!
+interface GigabitEthernet0/1
+!
+interface GigabitEthernet0/2
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+!
+!
+!
+line con 0
+ password Cisco
+ logging synchronous
+ login
+!
+line aux 0
+!
+line vty 0 4
+ password cisco
+ logging synchronous
+ login
+!
+!
+!
+!
+end
 ```
 
 ### Контрольные вопросы.
