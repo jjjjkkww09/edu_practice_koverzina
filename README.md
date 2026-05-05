@@ -9,5 +9,3 @@
 ПМ.03 - FullConfigWAN.md
 
 ПМ.04 - BasicBash.md ; VoIP.md 
-
-БОНУС - Ubuntu.md
